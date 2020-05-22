@@ -51,8 +51,8 @@ html {
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - 170px); 
-    padding-right: 170px; // was $right-sidebar-width-narrow: 200px
+    width: calc(100% - 180px); 
+    padding-right: 180px; // was $right-sidebar-width-narrow: 200px
   }
 
   @include breakpoint($x-large) {
