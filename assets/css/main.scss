@@ -31,10 +31,7 @@ html {
 }  
 
 .sidebar {
-  p,
-  li {
-    font-size: 0.78em;
-  }
+  p, li { font-size: 0.78em; }
 }
 
 .sidebar__right { 
@@ -104,9 +101,7 @@ h5 {font-size: 1.1em;}
 .page__meta { font-size: 0.85em;}
 
 .page__taxonomy {
-  strong {
-    margin-right: 3px
-  }
+  strong { margin-right: 3px }
 }
 .page__taxonomy-item {  
   border: none; 
