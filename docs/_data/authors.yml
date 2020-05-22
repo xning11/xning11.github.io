@@ -1,0 +1,17 @@
+# Authors
+
+Xin Ning:
+  name        : "Sabrina"
+  bio         : ""
+  avatar      : "/assets/images/xin-ning.jpg"
+  location    : "USA"
+  links:
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope-square"
+    #   url: "mailto:"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/xning_11"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/xning11"

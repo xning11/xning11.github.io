@@ -1,0 +1,159 @@
+{%- capture workspace__mathjax -%}
+  {% comment %}
+  Produces output similar to...
+
+  <script type="text/javascript"
+          async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js">
+      MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "input/MathML", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js"],
+        TeX: {
+          extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
+        }
+      });
+  </script>
+
+  ... and is almost fully configurable from page and site FrontMatter/Configurations
+  {% endcomment %}
+
+  {% assign output__mathjax = nil %}
+
+  {% if page.mathjax %}
+
+    {% capture mathjax__version %}2.7.5{% endcapture %}
+    {% if page.mathjax.version %}
+      {% assign mathjax__version = page.mathjax.version %}
+    {% elsif site.mathjax and site.mathjax.version %}
+      {% assign mathjax__version = site.mathjax.version %}
+    {% endif %}
+
+
+    {% assign mathjax__config_files = 'MMLorHTML.js' %}
+    {% if page.mathjax.config %}
+      {% assign mathjax__config_files = page.mathjax.config %}
+    {% elsif site.mathjax and site.mathjax.config %}
+      {% assign mathjax__config_files = site.mathjax.config %}
+    {% endif %}
+
+    {% assign mathjax__config_file__list = nil %}
+    {% if mathjax__config_files.first | size > 1 %}
+
+      {% for config_file in mathjax__config_files %}
+        {% if mathjax__config_file__list %}
+          {% capture mathjax__config_file__list %}{{ mathjax__config_file__list }}, "{{ config_file }}"{% endcapture %}
+        {% else %}
+          {% capture mathjax__config_file__list %}"{{ config_file }}"{% endcapture %}
+        {% endif %}
+      {% endfor %}
+
+    {% else %}
+      {% capture mathjax__config_file__list %}"{{ mathjax__config_files }}"{% endcapture %}
+    {% endif %}
+
+
+    {% assign mathjax__jax_configs = 'input/TeX, input/MathML, output/HTML-CSS, output/NativeMML' | split: ', ' %}
+    {% if page.mathjax.jax %}
+      {% assign mathjax__jax_configs = page.mathjax.jax %}
+    {% elsif site.mathjax and site.mathjax.jax %}
+      {% assign mathjax__jax_configs = site.mathjax.jax %}
+    {% endif %}
+
+    {% assign mathjax__jax_configs__list = nil %}
+    {% if mathjax__jax_configs.first | size > 1 %}
+
+      {% for jax_config in mathjax__jax_configs %}
+        {% if mathjax__jax_configs__list %}
+          {% capture mathjax__jax_configs__list %}{{ mathjax__jax_configs__list }}, "{{ jax_config }}"{% endcapture %}
+        {% else %}
+          {% capture mathjax__jax_configs__list %}"{{ jax_config }}"{% endcapture %}
+        {% endif %}
+      {% endfor %}
+
+    {% else %}
+      {% capture mathjax__jax_configs__list %}"{{ mathjax__jax_configs }}"{% endcapture %}
+    {% endif %}
+
+
+    {% assign mathjax__extensions = 'AMSmath.js, AMSsymbols.js, noErrors.js, noUndefined.js' | split: ', ' %}
+    {% if page.mathjax.extensions %}
+      {% assign mathjax__extensions = page.mathjax.extensions %}
+    {% elsif site.mathjax and site.mathjax.extensions %}
+      {% assign mathjax__extensions = site.mathjax.extensions %}
+    {% endif %}
+
+    {% assign mathjax__extensions__list = nil %}
+    {% if mathjax__extensions.first | size > 1 %}
+
+      {% for extension in mathjax__extensions %}
+        {% if mathjax__extensions__list %}
+          {% capture mathjax__extensions__list %}{{ mathjax__extensions__list }}, "{{ extension }}"{% endcapture %}
+        {% else %}
+          {% capture mathjax__extensions__list %}"{{ extension }}"{% endcapture %}
+        {% endif %}
+      {% endfor %}
+
+    {% else %}
+      {% capture mathjax__extensions__list %}"{{ mathjax__extensions }}"{% endcapture %}
+    {% endif %}
+
+
+    {% assign mathjax__tex__extensions = 'AMSmath.js, AMSsymbols.js, noErrors.js, noUndefined.js' | split: ', ' %}
+    {% if page.mathjax.TeX and page.mathjax.TeX.extensions %}
+      {% assign mathjax__tex__extensions = page.mathjax.TeX.extensions %}
+    {% elsif site.mathjax and site.mathjax.TeX and site.mathjax.TeX.extensions %}
+      {% assign mathjax__tex__extensions = site.mathjax.TeX.extensions %}
+    {% endif %}
+
+    {% assign mathjax__tex__extensions__list = nil %}
+    {% if mathjax__tex__extensions.first | size > 1 %}
+
+      {% for extension in mathjax__tex__extensions %}
+        {% if mathjax__tex__extensions__list %}
+          {% capture mathjax__tex__extensions__list %}{{ mathjax__tex__extensions__list }}, "{{ extension }}"{% endcapture %}
+        {% else %}
+          {% capture mathjax__tex__extensions__list %}"{{ extension }}"{% endcapture %}
+        {% endif %}
+      {% endfor %}
+
+    {% else %}
+      {% capture mathjax__tex__extensions__list %}"{{ mathjax__tex__extensions }}"{% endcapture %}
+    {% endif %}
+
+
+    {% capture output__mathjax %}
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/{{ mathjax__version }}/MathJax.js">
+      MathJax.Hub.Config({
+        {% if mathjax__config_file__list %}
+        config: [{{ mathjax__config_file__list }}],
+        {% endif %}
+
+        {% if mathjax__jax_configs__list %}
+        jax: [{{ mathjax__jax_configs__list }}],
+        {% endif %}
+
+        {% if mathjax__extensions__list %}
+        extensions: [{{ mathjax__extensions__list }}],
+        {% endif %}
+
+        {% if mathjax__tex__extensions__list %}
+        TeX: {
+          extensions: [{{ mathjax__tex__extensions__list }}]
+        },
+        {% endif %}
+
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        },
+
+        chtml: {scale: 0.9 },
+        svg: {scale: 0.9 }
+      });
+    </script>
+    {% endcapture %}
+
+  {% endif %}
+{%- endcapture -%}{% if output__mathjax %}{{ output__mathjax | strip }}{% endif %}{% assign output__mathjax = nil %}{% assign workspace__mathjax = nil %}
