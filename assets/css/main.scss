@@ -47,12 +47,11 @@ html {
     }
   }
 
+  .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
+  .mjx-chtml.MJXc-display {font-size: 100% !important;}  
+  
   .page__content {
     font-size: 0.9em;
-    
-    .mjx-chtml.MathJax_CHTML { font-size: 90% !important;}  
-
-    .mjx-chtml.MJXc-display {font-size: 90% !important;}  
   }  
 
   .page__meta { font-size: 0.85em;}
