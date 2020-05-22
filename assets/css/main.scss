@@ -66,17 +66,18 @@ html {
   }
 }
 
-
-small, .small { font-size: 0.8em;}
+small, .small { font-size: 0.85em;}
 
 table { font-size: 0.85em;}
 
+notice { font-size: 0.85em !important;}
+
+h2 {font-size: 1.35em;}
+
 .page__content {
-  p, li, dl {font-size: 0.9em;}
-  dt, dd { font-size: 0.85em;}
-  h2, h3, h4, h5, h6 {font-weight: bolder;}
+  font-size: 0.9em;
   .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
-  .mjx-chtml.MJXc-display { font-size: 100% !important;}  
+  .mjx-chtml.MJXc-display { font-size: 90% !important;}  
 }  
 
 .page__meta { font-size: 0.85em;}

@@ -17,11 +17,11 @@ This is a test...
 This is a test... 
 
 1. Statistics
-  1. Hypothesis testing 
-  2. Experimental design
+    1. Hypothesis testing 
+    2. Experimental design
 2. Machine Learning
-  1. Supervised 
-  2. Unsupervised
+    1. Supervised 
+    2. Unsupervised
 3. Software Engineering (including SQL)
 4. "Soft" Questions
 
