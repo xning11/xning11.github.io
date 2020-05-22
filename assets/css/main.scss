@@ -8,8 +8,6 @@
 @import "minimal-mistakes"; // main partials
 
 
-// .MathJax, .MathJax_Display { scale: 85% !important; }   
-
 html {
   font-size: 16px; 
 
@@ -23,6 +21,19 @@ html {
 
   @include breakpoint($x-large) {
     font-size: 20px; // change to whatever
+  }
+}
+
+.sidebar {
+  @include breakpoint($large) {
+    width: calc(170px - 1em); // was $right-sidebar-width-narrow: 200px
+  }
+}  
+
+.sidebar {
+  p,
+  li {
+    font-size: 0.78em;
   }
 }
 
@@ -53,32 +64,28 @@ html {
   margin-bottom: 1em;
 }
 
-.sidebar {
-  @include breakpoint($large) {
-    width: calc(170px - 1em); // was $right-sidebar-width-narrow: 200px
-  }
-}  
-
-.sidebar {
-  p,
-  li {
-    font-size: 0.78em;
-  }
-}
-
-small, .small { font-size: 0.85em;}
-
-table { font-size: 0.85em;}
-
-notice { font-size: 0.85em !important;}
-
-h2 {font-size: 1.35em;}
-
 .page__content {
   font-size: 0.9em;
   .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
-  .mjx-chtml.MJXc-display { font-size: 90% !important;}  
+  .mjx-chtml.MJXc-display { font-size: 100% !important;}  
 }  
+
+.notice { font-size: 0.85em !important;}
+.notice--info { font-size: 0.85em !important;}
+.notice--primary { font-size: 0.85em !important;}
+.nptice--warning { font-size: 0.85em !important;}
+.notice--success { font-size: 0.85em !important;}
+.nptice--danger { font-size: 0.85em !important;}
+
+table { font-size: 0.85em;}
+
+small, .small { font-size: 0.85em;}
+
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.3em;}
+h4 {font-size: 1.2em;}
+h5 {font-size: 1.1em;}
 
 .page__meta { font-size: 0.85em;}
 
@@ -97,5 +104,4 @@ h2 {font-size: 1.35em;}
 
 .archive__item-title a { text-decoration: none;  }
 
-.archive__item-excerpt { font-size: 0.85em; }   
-
+.archive__item-excerpt { font-size: 0.85em; } 
