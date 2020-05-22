@@ -28,7 +28,7 @@ html {
 
   .page__inner-wrap {
     .page__date {
-      font-size: 15px;
+      font-size: 0.85em;
       color: #666666;
       margin-top: 0.5em;
       margin-bottom: 2.5em;
@@ -43,7 +43,7 @@ html {
   .sidebar {
     p,
     li {
-      font-size: 0.85em;
+      font-size: 0.8em;
     }
   }
 
@@ -51,13 +51,14 @@ html {
     font-size: 0.9em;
   }  
 
+  .page__meta { font-size: 0.85em;}
+
   .page__taxonomy {
     strong {
       margin-right: 3px
     }
   }
   .page__taxonomy-item {  
-    // font-size: 0.9em;
     border: none; 
     padding: 3px 6px; 
     margin-right: 3px; 
@@ -69,6 +70,6 @@ html {
 
   .archive__item-excerpt { font-size: 0.85em; }   
 
-  .archive__item-caption { font-size: 0.85em;} 
+  .MathJax_Preview { font-size: 100% !important; }  
 
-  // .MathJax, .MathJax_Display { font-size: 14px !important; }  
+  .mjx-chtml.MJXc-display {font-size: 100% !important;}
