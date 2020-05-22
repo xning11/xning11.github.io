@@ -8,10 +8,6 @@ toc: true
 
 Finally, my personal website - I got it running. 
 
-# Test header 1
-
-This is a test... 
-
 ## Test header 2
 
 This is a test... 
@@ -20,8 +16,12 @@ This is a test...
 
 This is a test... 
 
-1. Statistics (including experimental design)
+1. Statistics
+  1. Hypothesis testing 
+  2. Experimental design
 2. Machine Learning
+  1. Supervised 
+  2. Unsupervised
 3. Software Engineering (including SQL)
 4. "Soft" Questions
 
@@ -30,11 +30,11 @@ This is a test...
 This is a test... 
 
 | Description | Value |
-|------------|-------|
+|-------------|-------|
 | Null Hypothesis| $$p_{blue} - p_{green} < 0$$ |
 | Test Statistic | $$ \frac{k_\text{blue}}{n} - \frac{k_\text{green}}{n} $$ |
 | Test Statistic's Distribution | $$N(0, (p_b(1-p_b) + p_g(1-p_g)) / n)$$ |
-| Test Statistic's Observed Value | -0.09 | 
+| Test Statistic's Observed Value | -0.09 |
 | $$p$$-value | 0.1003 |
 
 ## Test header 2
@@ -69,3 +69,14 @@ This is a test... **Test**
 ## Test header 2 
 
 This is a test...
+
+**Watch out!** You can also add notices by appending `{: .notice}` to a paragraph.
+{: .notice}
+
+**Primary Notice:** You can also add notices to a paragraph.
+{: .notice--primary}
+
+**Info Notice:** You can also add notices to a paragraph.
+{: .notice--info}
+
+> This is a quote.
