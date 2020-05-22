@@ -66,8 +66,6 @@ html {
   }
 }
 
-.mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
-.mjx-chtml.MJXc-display { font-size: 100% !important;}  
 
 small, .small { font-size: 0.8em;}
 
@@ -76,6 +74,9 @@ table { font-size: 0.85em;}
 .page__content {
   p, li, dl {font-size: 0.9em;}
   dt, dd { font-size: 0.85em;}
+  h2, h3, h4, h5, h6 {font-weight: bolder;}
+  .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
+  .mjx-chtml.MJXc-display { font-size: 100% !important;}  
 }  
 
 .page__meta { font-size: 0.85em;}
