@@ -28,7 +28,7 @@ html {
 
   .page__inner-wrap {
     .page__date {
-      font-size: 0.85em;
+      font-size: 0.8em;
       color: #666666;
       margin-top: 0.5em;
       margin-bottom: 2.5em;
@@ -70,6 +70,6 @@ html {
 
   .archive__item-excerpt { font-size: 0.85em; }   
 
-  .MathJax_Preview { font-size: 100% !important; }  
+  .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
 
   .mjx-chtml.MJXc-display {font-size: 100% !important;}
