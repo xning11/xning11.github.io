@@ -37,6 +37,12 @@ html {
   }
 }
 
+.sidebar__right { 
+  @include breakpoint($large) {
+    padding-right: 5px;
+  }
+}
+
 .page {
   @include breakpoint($large) {
     float: right;
@@ -102,6 +108,9 @@ h5 {font-size: 1.1em;}
 
 .taxonomy__index { font-size: 0.85em; }
 
+.archive__item-title { font-size: 1.25em; } 
+
 .archive__item-title a { text-decoration: none;  }
 
 .archive__item-excerpt { font-size: 0.85em; } 
+
