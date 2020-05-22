@@ -77,9 +77,10 @@ html {
 
 .page__content {
   font-size: 0.9em;
-  .mjx-chtml.MathJax_CHTML { font-size: 95% !important;}  
-  .mjx-chtml.MJXc-display { font-size: 95% !important;}  
 }  
+
+.mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
+.mjx-chtml.MJXc-display { font-size: 100% !important;}  
 
 .notice { font-size: 0.85em !important;}
 .notice--info { font-size: 0.85em !important;}
