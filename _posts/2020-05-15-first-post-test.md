@@ -37,9 +37,13 @@ This is a test...
 | Test Statistic's Observed Value | -0.09 | 
 | $$p$$-value | 0.1003 |
 
-#### Test header 4 
+## Test header 2
 
-This is a test...
+This is a test... 
+
+### Test header 3 
+
+This is a test... **Test** 
 
 {% highlight python %}
 from scipy.stats import norm
@@ -52,7 +56,7 @@ norm.cdf(-0.09, loc = 0, scale = sigma) # 0.10034431272089045
 
 #### Test header 4 
 
-This is a test...
+This is a test... **Test** 
 
 - test 
 - test 
@@ -62,6 +66,6 @@ This is a test...
     - test 
       - test 
 
-# Test header 1 
+## Test header 2 
 
 This is a test...

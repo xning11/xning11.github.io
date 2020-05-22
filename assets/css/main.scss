@@ -67,10 +67,14 @@ html {
 }
 
 .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
-.mjx-chtml.MJXc-display {font-size: 100% !important;}  
+.mjx-chtml.MJXc-display { font-size: 100% !important;}  
+
+small, .small { font-size: 0.8em;}
 
 .page__content {
   font-size: 0.9em;
+  h1, h2, h3, h4, h5, h6 { font-size: 0.9em;}
+  dt, dd { font-size: 0.85em;}
 }  
 
 .page__meta { font-size: 0.85em;}
