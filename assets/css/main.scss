@@ -11,83 +11,65 @@
 // .MathJax, .MathJax_Display { scale: 85% !important; }   
 
 html {
-  font-size: 16px; 
+    font-size: 16px; 
 
-  @include breakpoint($medium) {
-    font-size: 17px; // change to whatever
-  }
-
-  @include breakpoint($large) {
-    font-size: 18px; // change to whatever
-  }
-
-  @include breakpoint($x-large) {
-    font-size: 20px; // change to whatever
-  }
-}
-
-.page {
-  @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
+    @include breakpoint($medium) {
+      font-size: 17px; // change to whatever
+    }
+  
+    @include breakpoint($large) {
+      font-size: 18px; // change to whatever
+    }
+  
+    @include breakpoint($x-large) {
+      font-size: 20px; // change to whatever
+    }
   }
 
   .page__inner-wrap {
-    @include full();
+    .page__date {
+      font-size: 0.8em;
+      color: #666666;
+      margin-top: 0.5em;
+      margin-bottom: 2.5em;
+    }  
+  }
 
-    .page__content,
-    .page__meta,
-    .page__share {
-      @include full();
+  .page__title {
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+  }
+
+  .sidebar {
+    p,
+    li {
+      font-size: 0.8em;
     }
   }
-}
 
-.page__inner-wrap {
-  .page__date {
-    font-size: 0.8em;
-    color: #666666;
-    margin-top: 0.5em;
-    margin-bottom: 2.5em;
+  .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
+  .mjx-chtml.MJXc-display {font-size: 100% !important;}  
+  
+  .page__content {
+    font-size: 0.9em;
   }  
-}
 
-.page__title {
-  margin-top: 0.8em;
-  margin-bottom: 1em;
-}
+  .page__meta { font-size: 0.85em;}
 
-.sidebar {
-  p,
-  li {
-    font-size: 0.8em;
+  .page__taxonomy {
+    strong {
+      margin-right: 3px
+    }
   }
-}
-
-.mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
-.mjx-chtml.MJXc-display {font-size: 100% !important;}  
-
-.page__content {
-  font-size: 0.9em;
-}  
-
-.page__meta { font-size: 0.85em;}
-
-.page__taxonomy {
-  strong {
-    margin-right: 3px
+  .page__taxonomy-item {  
+    border: none; 
+    padding: 3px 6px; 
+    margin-right: 3px; 
   }
-}
-.page__taxonomy-item {  
-  border: none; 
-  padding: 3px 6px; 
-  margin-right: 3px; 
-}
 
-.taxonomy__index { font-size: 0.85em; }
+  .taxonomy__index { font-size: 0.85em; }
 
-.archive__item-title a { text-decoration: none;  }
+  .archive__item-title a { text-decoration: none;  }
 
-.archive__item-excerpt { font-size: 0.85em; }   
+  .archive__item-excerpt { font-size: 0.85em; }   
 
