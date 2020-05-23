@@ -12,39 +12,41 @@ html {
   font-size: 16px; 
 
   @include breakpoint($medium) {
-    font-size: 17px; // change to whatever
+    font-size: 16px; // change to whatever
   }
 
   @include breakpoint($large) {
-    font-size: 18px; // change to whatever
+    font-size: 16px; // change to whatever
   }
 
   @include breakpoint($x-large) {
-    font-size: 20px; // change to whatever
+    font-size: 16px; // change to whatever
   }
 }
-
-.sidebar {
-  @include breakpoint($large) {
-    width: calc(170px - 1em); // was $right-sidebar-width-narrow: 200px
-  }
-}  
 
 .sidebar {
   p, li { font-size: 0.78em; }
-}
+
+  @include breakpoint($large) {
+    width: calc(170px - 1em); // was $right-sidebar-width-narrow: 200px
+    padding-left: 5px;
+  }
+}  
+
 
 .sidebar__right { 
   @include breakpoint($large) {
-    width: 170px; 
+    width: 1780px; 
     margin-right: -170px;
-    padding-right: 0.2em;
+    padding-left: 17px;
+    padding-right: 5px;
   }
 
   @include breakpoint($x-large) {
     width: 200px; 
     margin-right: -200px;
-    padding-right: 0.2em;
+    padding-left: 20px;
+    padding-right: 5px;
   }
 }
 
@@ -56,8 +58,8 @@ html {
   }
 
   @include breakpoint($x-large) {
-    width: calc(100% - 200px);
-    padding-right: 200px; // was $right-sidebar-width: 300px
+    width: calc(100% - 210px);
+    padding-right: 210px; // was $right-sidebar-width: 300px
   }
 }
 
@@ -71,13 +73,13 @@ html {
 }
 
 .page__title {
-  margin-top: 0.8em;
-  margin-bottom: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-.page__content {
-  font-size: 0.9em;
-}  
+// .page__content {
+//   font-size: 0.9em;
+// }  
 
 .mjx-chtml.MathJax_CHTML { font-size: 100% !important;}  
 .mjx-chtml.MJXc-display { font-size: 100% !important;}  
@@ -93,7 +95,6 @@ table { font-size: 0.85em;}
 
 small, .small { font-size: 0.85em;}
 
-h1 {font-size: 1.6em;}
 h2 {font-size: 1.4em;}
 h3 {font-size: 1.3em;}
 h4 {font-size: 1.2em;}
@@ -110,7 +111,11 @@ h5 {font-size: 1.1em;}
   margin-right: 3px; 
 }
 
-.taxonomy__index { font-size: 0.85em; }
+.toc__menu { font-size: 0.75em; }
+
+.taxonomy__index { font-size: 0.8em; }
+
+.archive__subtitle { font-size: 0.95em; }
 
 .archive__item-title { font-size: 1.25em; } 
 
