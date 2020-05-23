@@ -25,13 +25,17 @@ html {
 }
 
 .sidebar {
-  p, li { font-size: 0.8em; }
+  .author__avatar img { max-width: 130px; }
+  .author__name { font-size: 1.125em;}
+
+  p, li { font-size: 0.85em; }
 
   @include breakpoint($large) {
     width: calc(170px - 1em); // was $right-sidebar-width-narrow: 200px
     padding-left: 5px;
   }
 }  
+
 
 .sidebar__right { 
   @include breakpoint($large) {
@@ -99,6 +103,7 @@ h3 {font-size: 1.3em;}
 h4 {font-size: 1.2em;}
 h5 {font-size: 1.1em;}
 
+.site-title { font-size: 20px;}
 .masthead__menu-item { font-size: 20px;}
 
 .page__meta { font-size: 0.9em;}
