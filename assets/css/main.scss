@@ -25,7 +25,7 @@ html {
 }
 
 .sidebar {
-  p, li { font-size: 0.78em; }
+  p, li { font-size: 0.8em; }
 
   @include breakpoint($large) {
     width: calc(170px - 1em); // was $right-sidebar-width-narrow: 200px
@@ -33,10 +33,9 @@ html {
   }
 }  
 
-
 .sidebar__right { 
   @include breakpoint($large) {
-    width: 1780px; 
+    width: 170px; 
     margin-right: -170px;
     padding-left: 17px;
     padding-right: 5px;
@@ -100,7 +99,9 @@ h3 {font-size: 1.3em;}
 h4 {font-size: 1.2em;}
 h5 {font-size: 1.1em;}
 
-.page__meta { font-size: 0.85em;}
+.masthead__menu-item { font-size: 20px;}
+
+.page__meta { font-size: 0.9em;}
 
 .page__taxonomy {
   strong { margin-right: 3px }
@@ -113,9 +114,12 @@ h5 {font-size: 1.1em;}
 
 .toc__menu { font-size: 0.75em; }
 
-.taxonomy__index { font-size: 0.8em; }
+.taxonomy__index { font-size: 0.85em; }
 
-.archive__subtitle { font-size: 0.95em; }
+.archive__subtitle { 
+  font-size: 0.95em; 
+  color: #9f9f9f;
+}
 
 .archive__item-title { font-size: 1.25em; } 
 

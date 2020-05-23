@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Learn Unknown"
 title_separator          : "-"
-subtitle                 : "A path to learn unknown"
+subtitle                 : ""
 name                     : &name "Sabrina" # &name is a YAML anchor which can be *referenced later
 description              : &description "A website for learning and data science and machine learn algorithm and applications."
 url                      : https://xning11.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
