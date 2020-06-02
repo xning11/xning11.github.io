@@ -1,8 +1,6 @@
 ---
 title: "First Post Test"
 excerpt: "The first post test."
-tags: 
-  - casual
 toc: true
 ---
 

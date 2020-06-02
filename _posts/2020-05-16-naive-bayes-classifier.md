@@ -69,7 +69,7 @@ Logistic regression can more easily overfit the training data than Naive Bayes c
 
 To solve Naive Bayes classifier and logistic regression, we use Gradient Descent or Newton's Method.
 
-____
+----
 References:
 
 1. [http://cs229.stanford.edu/notes2020spring/cs229-notes2.pdf](http://cs229.stanford.edu/notes2020spring/cs229-notes2.pdf)
