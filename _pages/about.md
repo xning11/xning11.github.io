@@ -16,3 +16,10 @@ read_time: false
 Learn Unknown is a tentative website for learning and sharing fundamentals, algorithms, and applications to data science and machine learning projects.
 
 Wait to see...
+
+
+----
+
+### About ME 
+
+I recently earned my Ph.D. in Economics and currently work as a postdoc researcher. My research areas include international trade, agricultural and food policy evaluation, and other topics in applied economics. I enjoy applying the state-of-the-art methodologies to do quantitative analysis that provides insightful suggestions to policy- and decision-making. Thus, I decide to make this personal website - **Learn Unknown** - to track my learning journey of the advanced econs, stats, machine learning algorithms, and relevant techniques used in data science arena, and to share useful thoughts and resources for potential beneficients. If you'd like to join this journey, please feel free to reach out.
