@@ -110,7 +110,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/xning11"
-
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:ningxin8023@gmail.com" 
 # Site Footer
 # footer:
 #   links:

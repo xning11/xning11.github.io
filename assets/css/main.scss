@@ -39,16 +39,16 @@ html {
 
 .sidebar__right { 
   @include breakpoint($large) {
-    width: 190px; 
-    margin-right: -180px;
-    padding-left: 18px;
+    width: 200px; 
+    margin-right: -200px;
+    padding-left: 30px;
     padding-right: 5px;
   }
 
   @include breakpoint($x-large) {
     width: 220px; 
-    margin-right: -210px;
-    padding-left: 20px;
+    margin-right: -220px;
+    padding-left: 40px;
     padding-right: 5px;
   }
 }
@@ -56,8 +56,8 @@ html {
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - 200px); 
-    padding-right: 200px; // was $right-sidebar-width-narrow: 200px
+    width: calc(100% - 210px); 
+    padding-right: 210px; // was $right-sidebar-width-narrow: 200px
   }
 
   @include breakpoint($x-large) {
