@@ -62,7 +62,7 @@ algolia:
   files_to_exclude:
     # - _posts/2017-11-28-post-exclude-search.md
 google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
+  search_engine_id       : 013742599131942585100:jfgddpns9js # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 
 # SEO Related
