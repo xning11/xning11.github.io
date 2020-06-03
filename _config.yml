@@ -53,7 +53,7 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
 search                   : true # true, false (default)
 search_full_content      : true # true, false (default)
-search_provider          : algolia # lunr (default), algolia
+search_provider          : google # lunr (default), algolia
 algolia:
   application_id         : 5HEHX4W5A1 # YOUR_APPLICATION_ID
   index_name             : learn_unknown # YOUR_INDEX_NAME
