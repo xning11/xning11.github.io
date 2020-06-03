@@ -287,4 +287,14 @@ defaults:
     values:
       sitemap: false 
       read_time: false 
-
+  # _moments
+  - scope:
+      path: "/moment/:title:output_ext"
+      type: moments
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      comments: true
+      read_time: false
+      related: false
