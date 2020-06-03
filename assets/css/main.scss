@@ -39,14 +39,14 @@ html {
 
 .sidebar__right { 
   @include breakpoint($large) {
-    width: 180px; 
+    width: 190px; 
     margin-right: -180px;
     padding-left: 18px;
     padding-right: 5px;
   }
 
   @include breakpoint($x-large) {
-    width: 210px; 
+    width: 220px; 
     margin-right: -210px;
     padding-left: 20px;
     padding-right: 5px;
