@@ -91,6 +91,12 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:ningxin8023@gmail.com" 
 
+# Site Footer
+footer:
+  links:
+    - label: "Sitemap"
+      icon: "fab fa-fw fa-link"
+      url: "https://xning11.github.io/sitemap"
 
 # Reading Files
 include:
