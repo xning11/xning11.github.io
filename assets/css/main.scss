@@ -70,7 +70,7 @@ html {
   .page__date {
     font-size: 0.8em;
     color: #666666;
-    margin-top: -1.2em;
+    margin-top: -1.5em;
     margin-bottom: 2em;
   }  
 }
@@ -112,12 +112,10 @@ h5 {font-size: 1.1em;}
   strong { margin-right: 3px }
 }
 .page__taxonomy-item {  
-  border: none; 
-  padding: 3px 6px; 
-  margin-right: 3px; 
+  margin-bottom: 5px;
 }
 
-.toc__menu { font-size: 0.75em; }
+.toc__menu { font-size: 0.8em; }
 
 .taxonomy__index { font-size: 0.85em; }
 
