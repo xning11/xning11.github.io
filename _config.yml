@@ -87,6 +87,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/xning11"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/xin--ning"    
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:ningxin8023@gmail.com" 
@@ -95,7 +98,6 @@ author:
 footer:
   links:
     - label: "Sitemap"
-      icon: "fab fa-fw fa-link"
       url: "https://xning11.github.io/sitemap"
 
 # Reading Files
