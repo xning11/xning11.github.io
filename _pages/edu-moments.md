@@ -6,4 +6,4 @@ collection: moments
 # entries_layout: grid
 ---
 
-Archived posts of educational thoughts.
+Archived posts of educational thoughts. Some opinions may be outdated.

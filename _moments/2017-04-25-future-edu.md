@@ -9,6 +9,7 @@ last_modified_at: 2017-04-25
 I am so inspired by Parker Palmer’s article that I can’t agree more of his saying. Here I cited two parts that I was resonated the most.
 
 > … Institutions are us. The shadows that institutions cast over our ethical lives are external expressions of our own inner shadows, individual and collective. If institutions are rigid, it is because we fear change. If institutions are competitive, it is because we value winning over all else. If institutions are heedless of human need, it is because something in us also is heedless.
+
 > … The fact that we have schools does not mean we have education. The fact that we have hospitals does not mean we have health care. The fact that we have courts does not mean we have justice. We need professionals who are “in but not of their institutions, whose allegiance to the core values of their fields makes them resist the institutional diminishment of those values.
 
 I’ve heard from many people complaining how terrible our education system is and how we should reform as like the Western system. I was ever one of them. However, more recently, I began to think about what ultimately went wrong in our education, why we still can’t figure out how to figure out.
