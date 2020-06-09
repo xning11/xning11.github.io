@@ -1,5 +1,5 @@
 ---
-title: "Reflection on Higher Education"
+title: "Reflection on higher education"
 categories: 
     - education
 last_modified_at: 2017-01-22
@@ -16,4 +16,7 @@ Higher Education itself is a public good that can benefit every humanity. To und
 
 ----
 To the end:
-I remember in my old days, I was scared of voicing my opinions. I always phrased my points in mind but didn’t try to say it loud. And as time went by, I was more scared of saying and even less involved in thinking. I realized that this is a vicious circle that I need to get rid of. Now, I am trying to be more active, think critically and talk properly. This is my first time blogging and expressing my thinking and opinions, I’m so excited that I start my blogging life. However, I am not an expert in using English, which is a second language for me. Please notify me for any confusion or misunderstanding that may upset you. I appreciate of anyone’s kindly understanding.
+I remember in my old days, I was scared of voicing my opinions. I always phrased my points in mind but didn’t try to say it loud. And as time went by, I was more scared of saying and even less involved in thinking. I realized that this is a vicious circle that I need to get rid of. Now, I am trying to be more active, think critically and talk properly. This is my first time blogging and expressing my thinking and opinions, I’m so excited that I start my blogging life. However, I am not an expert in English, which is a second language for me. Please notify me for any confusion or misunderstanding that may upset you. I appreciate of your kind understanding.
+
+**Note:** This post is archived and migrated from my wordpress website. Some opinions may be outdated.
+{: .notice--info}
