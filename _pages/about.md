@@ -7,7 +7,6 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.3"
   overlay_image: "/images/homepage-feature.jpg"
-  caption: ""
 last_modified_at: 2020-05-15 
 read_time: false 
 ---
