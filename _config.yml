@@ -249,6 +249,17 @@ defaults:
       comments: true
       read_time: false
       related: false
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+      read_time: false
+      related: false
 
 collections:
   projects:

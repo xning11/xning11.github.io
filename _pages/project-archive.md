@@ -3,9 +3,9 @@ title: Projects
 layout: collection
 permalink: /projects/
 collection: projects
-entries_layout: grid
+# entries_layout: grid
 classes: wide
-hidden: true
+# hidden: true
 ---
 
 Sample document listing for the collection `projects`.

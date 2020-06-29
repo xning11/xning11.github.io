@@ -7,12 +7,12 @@ tags:
   - classification
   - supervised-learning
   - feature-engineering
-date: 2019-10-26
+last_modified_at: 2019-10-26
 ---
 
 The E-learning industry has grown rapidly over the last decade and this trend is expected to continue thanks to increasing acceptance of remote learning courses and advances in E-learning technology. Hence new customer acquisition is a key performance driver for any company in this space, with referrals one of the common strategies currently used. 
 
-As a Data Science Fellow at Insight, I consulted with an E-learning company (which we will call “Company X”) to evaluate their user referral program and provide practical insights for acquiring new customers and accelerating their business growth in the coming months.
+As a Data Science Fellow at Insight, I consulted with an E-learning company (which we will call "Company X") to evaluate their user referral program and provide practical insights for acquiring new customers and accelerating their business growth in the coming months.
 
 Company X connects learners and teachers via online classrooms. Users can share their experiences via social media, email, or referral link in various places throughout the platform (e.g., for sharing a specific class, a class comment/feedback, or recommending a teacher). Company X is interested in understanding and predicting which user details, prompts, and events/experiences are the most important in nudging users towards sharing their experiences on the platform and making a referral to potential customers. By better understanding these factors, they can prioritize product features, operations, and user acquisition efforts to target these areas.
 
