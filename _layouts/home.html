@@ -20,9 +20,9 @@ layout: archive
 
 {% for collection in site.collections %}
   {% for post in collection.docs %}
-    {% unless collection.output == false or collection.label == "projects" %}
+    {% if collection.output == true and collection.label == "projects" %}
       {% include archive-single.html %}
-    {% endunless %}
+    {% endif %}
   {% endfor %}
 {% endfor %}
 
