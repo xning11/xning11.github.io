@@ -172,7 +172,7 @@ compress_html:
 
 
 # Outputting
-permalink: /blog/:year/:month/:day/:title:output_ext
+permalink: /posts/:title:output_ext
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 timezone: America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -264,7 +264,7 @@ defaults:
 collections:
   projects:
     output: true 
-    permalink: /:collection/:path/
+    permalink: /:collection/:path:output_ext
   moments:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:path:output_ext
