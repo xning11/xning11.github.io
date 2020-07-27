@@ -1,5 +1,5 @@
 ---
-title: "Unrolling user referrals - A model for predicting user referrals in online education"
+title: "Unrolling User Referrals - A Model for Predicting User Referrals in Online Education"
 categories:
   - data science
   - machine learning

@@ -1,5 +1,5 @@
 ---
-title: "Understanding three types of price discrimination"
+title: "Understanding Three Types of Price Discrimination"
 categories:
   - economics
 tags:
