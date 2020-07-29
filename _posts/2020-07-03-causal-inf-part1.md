@@ -28,30 +28,35 @@ Before we start, let's explicate the implicit assumptions when making causal inf
 
 Consider a dichotomous treatment variable $A$ (1: treated, 0: untreated) and a dichotomous outcome variable $Y$ (1: death, 0: survival), each takes on one of only two possible values when observed or measured. Let $Y^{a}$ be the outcome variable that would have been observed under the treatment value $A=a$. The variables $Y^{a=1}$ and $Y^{a=0}$ are referred to as counterfactual outcomes.
 
-Note: For a binary $A$ and $Y$, $E[Y^{a}] = P[Y^{a}]$. {: .notice--info}
+**Note:** For a binary $A$ and $Y$, $E[Y^{a}] = P[Y^{a}]$.
+{: .notice--info}
 
-An average causal effect of treatment $A$ on outcome $Y$ is present if $E[Y^{a=1}=1]\neq E[Y^{a=0}=1]$ in the population of interest. The corresponding null hypothesis of no average causal effect is $E[Y^{a=1}]=E[Y^{a=0}]$, or equivalently, $E[Y^{a=1}-Y^{a=0}]=0$. Thus, rejection of the null indicates the presence of the average causal effect.
+An average causal effect of treatment $A$ on outcome $Y$ is present if $E[Y^{a=1}=1]\neq E[Y^{a=0}=1]$ in the population of interest. The corresponding null hypothesis of no average causal effect is defined as $E[Y^{a=1}]=E[Y^{a=0}]$, or equivalently, $E[Y^{a=1}-Y^{a=0}]=0$. Thus, rejection of the null indicates the presence of the average causal effect.
 
 There are three types of measures of causal effect under the null:
 
 1. Causal risk differece - measuring the absolute number of cases of the outcome attributable to the treatment.
+
     $$
     P(Y^{a=1}=1) - P(Y^{a=0}=1) = 0
     $$
 
 2. Causal risk ratio - measuring how many times treatment relative to no treatment increases the outcome of interest.
+
     $$
     \frac{P(Y^{a=1}=1)}{P(Y^{a=0}=1)} = 1
     $$
 
 3. Causal odds ratio.
+
     $$
     \frac{P(Y^{a=1}=1)/P(Y^{a=1}=0)}{P(Y^{a=0}=1)/P(Y^{a=0}=0)} = 1
     $$
 
 When measuring the causal effect, the problem is that we only observe one of the outcomes if the individual is treated or untreated. For example, the counterfactual outcomes under no treatment, $P(Y^{a=0}=1)$, cannot be directly computed. Besides, the counterfactual outcomes are likely nondeterministic, and vary across individuals.
 
-Note: If $A=1$, the $Y^{a=0}$ is missing data. If $A=0$, the $Y^{a=1}$ is missing data. {: .notice--info}
+**Note:** If $A=1$, the $Y^{a=0}$ is missing data. If $A=0$, the $Y^{a=1}$ is missing data.
+{: .notice--info}
 
 Now let's turn to the definition of association. Similarly, there are three types of measures of association under the null:
 
@@ -72,7 +77,7 @@ Now let's turn to the definition of association. Similarly, there are three type
 
 When the proportion of individuals who develop the outcome in the treated $P(Y=1 \vert A=1)$ equals the proportion of individuals who develop the outcome in the untreated $P(Y=1 \vert A=0)$, we say that treatment $A$ and outcome $Y$ are independent, that $A$ is not associated with $Y$, $Y \perp A$. However, treatment $A$ and outcome $Y$ are dependent or associated when $P(Y=1 \vert A=1) \neq P(Y=1 \vert A=0)$.
 
-### Difference between Causation and Association
+#### Difference between Causation and Association
 
 Notably, the risk $P(Y=1 \vert A=a)$ is a conditional probability: the risk of $Y$ in the subset of the population that have actually received treatment value $a$, $A=a$. They can be measured directly. In contrast, the risk $P(Y^{a})$ is an unconditional/marginal probability: the risk of $Y^{a}$ in the whole population. They can not be measured because of missing data.
 
@@ -128,7 +133,7 @@ In conditionally randomized experiments, we can compute the average causal effec
 
 This method to compute stratum-specific causal effects is referred to as stratification. If the stratum-specific causal effects in each subset are different, we say that the treatment effect is modified by $L$, or that there is effect modification by $L$.
 
-### Standardization and Inverse Probability Weighting
+#### Standardization and Inverse Probability Weighting
 
 There are two methods to compute the average causal effects in the whole population in a conditionally randomized experiment: standardization and inverse probability weighting.
 
