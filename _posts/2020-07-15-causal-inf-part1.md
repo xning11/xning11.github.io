@@ -4,9 +4,11 @@ categories:
   - causal inf
 tags:
   - causal effect
-  - randomized-experiments
+  - randomized-experiment
+  - observational-study
   - exchangeability
   - consistency
+  - positivity
 ---
 
 This is a series of study notes of [**Causal Inference: What If**](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), by Miguel A. Hernán and James M. Robins (2020). The book provides a comprehensive overview of causal inference, from definitions to methodologies to implications, both qualitatively and quantitatively. It is an excellent book that worths the devotion of time to fully digest. So, I made these notes to summarize what I have learned and what I can use for practical analysis.
@@ -81,7 +83,7 @@ Now let's turn to the definition of association. Similarly, there are three type
 3. Associative odds ratio.
 
     $$
-    \frac{P(YY=1 \vert A=1)/P(Y=0 \vert A=1)}{P(YY=1 \vert A=0)/P(Y=0 \vert A=0)} = 1
+    \frac{P(Y=1 \vert A=1)/P(Y=0 \vert A=1)}{P(Y=1 \vert A=0)/P(Y=0 \vert A=0)} = 1
     $$
 
 When the proportion of individuals who develop the outcome in the treated $P(Y=1 \vert A=1)$ equals the proportion of individuals who develop the outcome in the untreated $P(Y=1 \vert A=0)$, we say that treatment $A$ and outcome $Y$ are independent, that $A$ is not associated with $Y$, $\ind{Y}{A}$. Contrarily, treatment $A$ and outcome $Y$ are dependent or associated when $P(Y=1 \vert A=1) \neq P(Y=1 \vert A=0)$.
