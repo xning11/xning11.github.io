@@ -138,3 +138,7 @@ This method to compute stratum-specific causal effects is referred to as stratif
 There are two methods to compute the average causal effects in the whole population in a conditionally randomized experiment: standardization and inverse probability weighting.
 
 TBC
+
+$$ \ind{$Y_{i}}{X} \vert Z $$
+
+$$ X \vert Z $$
