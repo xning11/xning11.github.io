@@ -9,16 +9,16 @@ tags:
   - consistency
 ---
 
-$$
-\newcommand{ind}[2]{ #1 \perp\!\!\!\perp #2}
-\newcommand{cind}[3]{ #1 \perp\!\!\!\perp #2 \, | \, #3}
-$$
-
 This is a series of lecture note posts of [**Causal Inference: What If**](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), by Miguel A. Hernán and James M. Robins (2020). The book provides a comprehensive plan for learning causal inference, both qualitatively and quantitatively, from definitions to methodologies to implications. It is an excellent book that worths the devotion of time to fully digest. So, I made these notes to summarize what I have learned and what I can use for my causal inference analysis.
 
 To better use the notes, I would suggest that you read the book first. They shared many stories to make the technical points more interesting and relating. Then you can use the summary notes here to enhance your understanding of the topic. I hope you find them helpful.
 
 The first note talks about the assumptions for causal inference, the definition of causal effect, the difference between causal inference and associative inference, randomized experiments, observational studies, and three identification conditions for making causal inference in observational data. (It covers the chapters 1-3 in the book.)
+
+$
+\newcommand{ind}[2]{ #1 \perp\!\!\!\perp #2}
+\newcommand{cind}[3]{ #1 \perp\!\!\!\perp #2 \, | \, #3}
+$
 
 ## A Definition of Causal Effect
 
@@ -66,16 +66,19 @@ When measuring the causal effect, the problem is that we only observe one of the
 Now let's turn to the definition of association. Similarly, there are three types of measures of association under the null:
 
 1. Associative risk difference.
+
     $$
     P(Y=1 \vert A=1) - P(Y=1 \vert A=0) = 0
     $$
 
 2. Associative risk ratio.
+
     $$
     \frac{P(Y=1 \vert A=1)}{P(Y=1 \vert A=0)} = 1
     $$
 
 3. Associative odds ratio.
+
     $$
     \frac{P(YY=1 \vert A=1)/P(Y=0 \vert A=1)}{P(YY=1 \vert A=0)/P(Y=0 \vert A=0)} = 1
     $$
