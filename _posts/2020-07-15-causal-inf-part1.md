@@ -9,9 +9,9 @@ tags:
   - consistency
 ---
 
-This is a series of lecture note posts of [**Causal Inference: What If**](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), by Miguel A. Hernán and James M. Robins (2020). The book provides a comprehensive plan for learning causal inference, both qualitatively and quantitatively, from definitions to methodologies to implications. It is an excellent book that worths the devotion of time to fully digest. So, I made these notes to summarize what I have learned and what I can use for my causal inference analysis.
+This is a series of study notes of [**Causal Inference: What If**](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), by Miguel A. Hernán and James M. Robins (2020). The book provides a comprehensive overview of causal inference, from definitions to methodologies to implications, both qualitatively and quantitatively. It is an excellent book that worths the devotion of time to fully digest. So, I made these notes to summarize what I have learned and what I can use for practical analysis.
 
-To better use the notes, I would suggest that you read the book first. They shared many stories to make the technical points more interesting and relating. Then you can use the summary notes here to enhance your understanding of the topic. I hope you find them helpful.
+To better use these notes, I would suggest that you read the book first. They shared many stories to make the technical points more interesting and relating. Alongside the book, you can use these notes to enhance your understanding of the topic. I hope you find them helpful.
 
 The first note talks about the assumptions for causal inference, the definition of causal effect, the difference between causal inference and associative inference, randomized experiments, observational studies, and three identification conditions for making causal inference in observational data. (It covers the chapters 1-3 in the book.)
 
@@ -26,10 +26,9 @@ Before we start, let's explicate the implicit assumptions when making causal inf
 
 1. *No Interference:* An individual's outcome is not influenced by their social interaction with other population members.
     - It means that individuals' outcomes ought to be independent of each other in the presence of intervention of interest.
-    - In social networking experiments/obsevational studies, this assumption is unlikely to hold.
+    - In social networking experiments/obsevational studies, this assumption is unlikely to hold. It is often called spillover effect or network effect.
 2. *Treatment Variation Irrelevance:* Multiple versions of treatment may exist but they all result in the same counterfactual outcome.
-    - It means that the intervention should be well-defined and -measured.
-    - In biostatistics, it is important to define specific variants of treatment and their corresponding outcomes.
+    - It means that the intervention should be well-defined and -measured. For example, in biostatistics, it is important to define specific variants of treatment and their corresponding outcomes. If the intervention is ill-defined, the conclusion it based upon may not represent the actual causal relationship.
 
 Consider a dichotomous treatment variable $A$ (1: treated, 0: untreated) and a dichotomous outcome variable $Y$ (1: death, 0: survival), each takes on one of only two possible values when observed or measured. Let $Y^{a}$ be the outcome variable that would have been observed under the treatment value $A=a$. The variables $Y^{a=1}$ and $Y^{a=0}$ are referred to as counterfactual outcomes.
 
@@ -58,7 +57,9 @@ There are three types of measures of causal effect under the null:
     \frac{P(Y^{a=1}=1)/P(Y^{a=1}=0)}{P(Y^{a=0}=1)/P(Y^{a=0}=0)} = 1
     $$
 
-When measuring the causal effect, the problem is that we only observe one of the outcomes if the individual is treated or untreated. For example, the counterfactual outcomes under no treatment, $P(Y^{a=0}=1)$, cannot be directly computed. Besides, the counterfactual outcomes are likely nondeterministic, and vary across individuals.
+When measuring the causal effect, the problem is that we only observe one of the outcomes when the individual is treated or untreated. For example, the counterfactual outcomes under no treatment, $P(Y^{a=0}=1)$, cannot be directly computed. Besides, the counterfactual outcomes are likely nondeterministic, and vary across individuals.
+
+In other words, we would never be able to identify the true causal effect because of missing data. However, under certain assumptions, we can make causal inference using associative inference.
 
 **Note:** If $A=1$, the $Y^{a=0}$ is missing data. If $A=0$, the $Y^{a=1}$ is missing data.
 {: .notice--info}
@@ -83,7 +84,7 @@ Now let's turn to the definition of association. Similarly, there are three type
     \frac{P(YY=1 \vert A=1)/P(Y=0 \vert A=1)}{P(YY=1 \vert A=0)/P(Y=0 \vert A=0)} = 1
     $$
 
-When the proportion of individuals who develop the outcome in the treated $P(Y=1 \vert A=1)$ equals the proportion of individuals who develop the outcome in the untreated $P(Y=1 \vert A=0)$, we say that treatment $A$ and outcome $Y$ are independent, that $A$ is not associated with $Y$, $\ind{Y}{A}$. However, treatment $A$ and outcome $Y$ are dependent or associated when $P(Y=1 \vert A=1) \neq P(Y=1 \vert A=0)$.
+When the proportion of individuals who develop the outcome in the treated $P(Y=1 \vert A=1)$ equals the proportion of individuals who develop the outcome in the untreated $P(Y=1 \vert A=0)$, we say that treatment $A$ and outcome $Y$ are independent, that $A$ is not associated with $Y$, $\ind{Y}{A}$. Contrarily, treatment $A$ and outcome $Y$ are dependent or associated when $P(Y=1 \vert A=1) \neq P(Y=1 \vert A=0)$.
 
 #### Difference between Causation and Association
 
@@ -99,9 +100,9 @@ In real word data, we can only observe the outcomes that indeed happened. The qu
 
 ## Randomized Experiments
 
-Randomized experiments generate data with missing values of the counterfactual outcomes. However, randomization ensures that those missing values occurred by chance. 
+Randomized experiments generate data with missing values of the counterfactual outcomes. However, randomization ensures that those missing values occurred by chance.
 
-To make causal inference in randomized experiments, *exchangeability* is required. When the group membership is randomized, which particular group received the treatment is irrelevant for the value of $P(Y=1 \vert A=1)$ and $P(Y=1 \vert A=0)$.
+To make causal inference in randomized experiments, the assumption of *exchangeability* is required. When the group membership is randomized, which particular group received the treatment is irrelevant for the value of $P(Y=1 \vert A=1)$ and $P(Y=1 \vert A=0)$.
 
 $$ P(Y^{a}=1 \vert A=1) = P(Y^{a}=1 \vert A=0) = P(Y^{a}=1) $$
 
@@ -118,7 +119,10 @@ Formally, exchangeability is defined as independence between the counterfactual 
 
 $$ \ind{Y^{a}}{A}, \forall a $$
 
-When the treated and the untreated are exchangeable, we say that treatment is exogenous. Exogeneity is commonly used as a synonym for exchangeability. 
+When the treated and the untreated are exchangeable, we say that treatment is exogenous. Exogeneity is commonly used as a synonym for exchangeability.
+
+**Note:** $\ind{Y^{a}}{A}$ is different from $\ind{Y}{A}$. In a randomized experiment in which exchangeability $\ind{Y^{a}}{A}$ holds and the treatment has a causal effect on the outcome, then $\ind{Y}{A}$ does not hold because the treatment is associated with the observed outcome.
+{: .notice--info}
 
 In practice, we are generally unable to determine whether exchangeability holds in our study. However, it is still possible that a study is a randomized experiment if exchangeability does not hold.
 
@@ -141,9 +145,56 @@ In conditionally randomized experiments, we can compute the average causal effec
 
 This method to compute stratum-specific causal effects is referred to as stratification. If the stratum-specific causal effects in each subset are different, we say that the treatment effect is modified by $L$, or that there is effect modification by $L$.
 
-#### Standardization and Inverse Probability Weighting
+#### Standardization
 
 There are two methods to compute the average causal effects in the whole population in a conditionally randomized experiment: standardization and inverse probability weighting.
 
-TBC
+Using standardization, the marginal counterfactual risk $P(Y^{a}=1)$ is the weighted average of the stratum-specific risks:
 
+$$
+\begin{aligned}
+P(Y^{a}=1 ) &= \sum_{l}P(Y^{a}=1 \vert L=l) \cdot P(L=l) \\
+            &= \sum_{l}P(Y=1 \vert A=a, L=l) \cdot P(L=l)
+\end{aligned}
+$$
+
+In the precense of conditional exchangeability, the standardized risk can be interpreted as the counterfactual risk that woud have been observed had all the individuals in the population been treated.
+
+#### Inverse Probability Weighting
+
+By weighting each individual in the population by the inverse of the conditional probability of receiving the treatment level that she indeed received, $W^{A}=1/f(A \vert L)$, we simulate a pseudo-population. Then, under conditional exchangeability in the original population, the treated and the untreated are (unconditionally) exchangeable in the pseudo-population because $L$ is independent of A.
+
+Standardization and IP weighting are mathematically equivalent, both of which are based on the assumption that the variable $L$ had not been used to decide the probability of treatment.
+
+## Observational Studies
+
+An observational study can be viewed as a conditionally randomized experiment if the following conditions hold:
+
+1. **Consistency:** The values of treatment under comparison correspond to well-defined intervention that, in turn, correspond to the versions of treatment in the data.
+
+2. **Exchangeability:** The conditional probability of receiving every value of treatment, though not decided by the investigators, depends only on the measured covariates $L$.
+
+3. **Positivity:** The probability of receiving every value of treatment conditional on $L$ is greater than zero.
+
+**Note:** An average causal effect is *identifiable* under a particular set of assumptions if these assumptions imply that the distribution of the observed data is compatible with a *single* value of the effect measure. It is *unidentifiable* if these assumptions imply that the distribution of the observed data is compatible with *several* values of the effect measure.
+{: .notice--info}
+
+#### Exchangeability
+
+In randomized experiments, the independent predictors of the outcome are equally distributed between the treated and the untreated.
+
+$$ \ind{Y^{a}}{A}, \forall a $$
+
+In conditionally randomized experiments, within levels of $L$, all other predictors of the outcome are equally distributed between the treated and the untreated.
+
+$$ \cind{Y^{a}}{A}{L}, \forall a $$
+
+If there exist unmeasured independent predictors $U$ of the outcome such that the probability of receiving teatment $A$ depends on $U$ within strata of $L$, then conditional exchangeability will not hold.
+
+#### Positivity
+
+There is positivity if $P(A=a \vert L=l) > 0, \forall a,l$. Positivity is only required for the variable $L$ that are required for exchangeability.
+
+#### Consistency
+
+Consistency is defined as the observed outcome for every treated individual equals her outcome if she had received treatment, that is $Y^{a}=Y$ for every individual with $A=a$. To ensure consistency, it needs sufficiently well-defined interventions $a$, in order to link the counterfactual outcomes $Y^{a}$ to the observed outcomes $Y^{A}=Y$, for individuals with $A=a$. It also needs positivity.
