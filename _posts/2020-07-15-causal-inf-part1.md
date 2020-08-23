@@ -15,10 +15,7 @@ To better use the notes, I would suggest that you read the book first. They shar
 
 The first note talks about the assumptions for causal inference, the definition of causal effect, the difference between causal inference and associative inference, randomized experiments, observational studies, and three identification conditions for making causal inference in observational data. (It covers the chapters 1-3 in the book.)
 
-<!-- $$
-\newcommand{ind}[2]{ #1 \perp\!\!\!\perp #2}
-\newcommand{cind}[3]{ #1 \perp\!\!\!\perp #2 \, | \, #3}
-$$ -->
+
 
 ## A Definition of Causal Effect
 
@@ -147,8 +144,7 @@ There are two methods to compute the average causal effects in the whole populat
 
 TBC
 
-$$ \ind{Y_{i}}{X} $$
-
-$$ \cind{Y_{i}}{X}{Z} $$
-
-$$ \RR \bold{test bold} $$ 
+$$
+\newcommand{ind}[2]{ #1 \perp\!\!\!\perp #2}
+\newcommand{cind}[3]{ #1 \perp\!\!\!\perp #2 \, | \, #3}
+$$
