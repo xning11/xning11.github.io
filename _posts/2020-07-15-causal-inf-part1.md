@@ -9,6 +9,11 @@ tags:
   - consistency
 ---
 
+$$
+\newcommand{ind}[2]{ #1 \perp\!\!\!\perp #2}
+\newcommand{cind}[3]{ #1 \perp\!\!\!\perp #2 \, | \, #3}
+$$
+
 This is a series of lecture note posts of [**Causal Inference: What If**](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), by Miguel A. Hernán and James M. Robins (2020). The book provides a comprehensive plan for learning causal inference, both qualitatively and quantitatively, from definitions to methodologies to implications. It is an excellent book that worths the devotion of time to fully digest. So, I made these notes to summarize what I have learned and what I can use for my causal inference analysis.
 
 To better use the notes, I would suggest that you read the book first. They shared many stories to make the technical points more interesting and relating. Then you can use the summary notes here to enhance your understanding of the topic. I hope you find them helpful.
@@ -75,7 +80,7 @@ Now let's turn to the definition of association. Similarly, there are three type
     \frac{P(YY=1 \vert A=1)/P(Y=0 \vert A=1)}{P(YY=1 \vert A=0)/P(Y=0 \vert A=0)} = 1
     $$
 
-When the proportion of individuals who develop the outcome in the treated $P(Y=1 \vert A=1)$ equals the proportion of individuals who develop the outcome in the untreated $P(Y=1 \vert A=0)$, we say that treatment $A$ and outcome $Y$ are independent, that $A$ is not associated with $Y$, $Y \perp A$. However, treatment $A$ and outcome $Y$ are dependent or associated when $P(Y=1 \vert A=1) \neq P(Y=1 \vert A=0)$.
+When the proportion of individuals who develop the outcome in the treated $P(Y=1 \vert A=1)$ equals the proportion of individuals who develop the outcome in the untreated $P(Y=1 \vert A=0)$, we say that treatment $A$ and outcome $Y$ are independent, that $A$ is not associated with $Y$, $\ind{Y}{A}$. However, treatment $A$ and outcome $Y$ are dependent or associated when $P(Y=1 \vert A=1) \neq P(Y=1 \vert A=0)$.
 
 #### Difference between Causation and Association
 
@@ -108,7 +113,7 @@ $$
 
 Formally, exchangeability is defined as independence between the counterfactual outcome and the actual treatment.
 
-$$ Y^{a} \perp A, \forall a $$
+$$ \ind{Y^{a}}{A}, \forall a $$
 
 When the treated and the untreated are exchangeable, we say that treatment is exogenous. Exogeneity is commonly used as a synonym for exchangeability. 
 
@@ -127,7 +132,7 @@ $$
 
 Formally, conditional exchangeability is defined as independence between $Y^{a}$ and $A$ in different subsets of the population where $L=l$ for all $l$.
 
-$$ Y^{a} \perp A \vert L, \forall a $$
+$$ \cind{Y^{a}}{A}{L}, \forall a $$
 
 In conditionally randomized experiments, we can compute the average causal effect in each of these subsets or strata of the population. Because association is causation within each subset, the stratum-specific causal risk ratio $\frac{P(Y^{a=1}=1 \vert L=1)}{P(Y^{a=0}=1 \vert L=1)}$ among people within $L=1$ is equal to the stratum-specific associational risk ratio $\frac{P(Y=1 \vert L=1, A=1)}{P(Y=1 \vert L=1, A=0)}$ among people within $L=1$. And analogously for $L=0$.
 
@@ -139,11 +144,6 @@ There are two methods to compute the average causal effects in the whole populat
 
 TBC
 
-$$
-\newcommand{Ind}[2]{ #1 \perp\!\!\!\perp #2}
-\newcommand{Cin}[3]{ #1 \perp\!\!\!\perp #2 \, | \, #3}
-$$
+$$ \ind{Y_{i}}{X} $$
 
-$$ \Ind{Y_{i}}{X} \vert Z $$
-
-$$ \Cin{Y_{i}}{X}{Z} $$
+$$ \cind{Y_{i}}{X}{Z} $$
