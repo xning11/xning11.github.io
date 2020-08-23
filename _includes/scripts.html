@@ -6,12 +6,8 @@
     jax: ["input/TeX", "input/MathML", "output/HTML-CSS", "output/NativeMML"],
     extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js"],
     tex: {
-      extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"],
-      macros: {
-        ind: ['#1 \\perp \!\!\! \\perp #2', 2],
-        cind: ['#1 \\perp \!\!\! \\perp #2 \, | \, #3', 3]
-      }
-    },
+      extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
+   },
     tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],
       processEscapes: true
@@ -20,6 +16,18 @@
     // svg: {scale: 0.9 }
   });
 </script>
+<script>
+  MathJax = {
+    tex: {
+      macros: {
+        RR: '{\\bf R}',                    // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ind: ['#1 \\perp \!\!\! \\perp #2', 2],
+        cind: ['#1 \\perp \!\!\! \\perp #2 \, | \, #3', 3]
+      }
+    }
+  };
+  </script>
 {% endif %}
 
 {% if site.footer_scripts %}

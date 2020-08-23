@@ -150,3 +150,5 @@ TBC
 $$ \ind{Y_{i}}{X} $$
 
 $$ \cind{Y_{i}}{X}{Z} $$
+
+$$ \RR \bold{test bold} $$ 
