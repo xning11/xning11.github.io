@@ -139,6 +139,12 @@ There are two methods to compute the average causal effects in the whole populat
 
 TBC
 
-$$ \ind{$Y_{i}}{X} \vert Z $$
+$$ \ind{Y_{i}}{X} \vert Z $$
 
 $$ X \vert Z $$
+
+$$
+   \def\RR{{\bf R}}
+   \def\bold#1{{\bf #1}}
+   \def\ind#2{{#1 \\perp \!\!\!\!\!\! \\perp #2}}
+$$
