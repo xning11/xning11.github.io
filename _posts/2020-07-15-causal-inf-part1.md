@@ -13,7 +13,7 @@ tags:
 
 This is a series of study notes of [**Causal Inference: What If**](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), by Miguel A. Hernán and James M. Robins (2020). The book provides a comprehensive overview of causal inference, from definitions to methodologies to implications, both qualitatively and quantitatively. It is an excellent book that worths the devotion of time to fully digest. So, I made these notes to summarize what I have learned and what I can use for practical analysis.
 
-To better use these notes, I would suggest that you read the book first. They shared many stories to make the technical points more interesting and relating. Alongside the book, you can use these notes to enhance your understanding of the topic. I hope you find them helpful.
+To better use these notes, I would suggest that you read the book first. They shared many stories to make the technical points more interesting and relating. Alongside the book, you can use these notes to enhance your understanding of the topics. I hope you find them helpful.
 
 The first note talks about the assumptions for causal inference, the definition of causal effect, the difference between causal inference and associative inference, randomized experiments, observational studies, and three identification conditions for making causal inference in observational data. (It covers the chapters 1-3 in the book.)
 
