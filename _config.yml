@@ -7,7 +7,7 @@ locale                   : "en-US"
 title                    : "Learn Unknown"
 title_separator          : "-"
 subtitle                 : ""
-name                     : &name "Sabrina" # &name is a YAML anchor which can be *referenced later
+name                     : &name "Xin (Sabrina)" # &name is a YAML anchor which can be *referenced later
 description              : &description "A website for learning and data science and machine learn algorithm and applications."
 url                      : https://xning11.github.io # the base hostname & protocol for your site 
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -78,8 +78,8 @@ social:
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
   avatar           : "/images/learn-unknown.jpg"
-  bio              : "Applied economist, Data Scientist"
-  location         : "VA"
+  bio              : "Applied Economist, Data Scientist"
+  location         : "CA"
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -92,7 +92,7 @@ author:
       url: "https://www.linkedin.com/in/xin--ning"    
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:ningxin8023@gmail.com" 
+      url: "mailto:xning1106@gmail.com" 
 
 # Site Footer
 footer:
