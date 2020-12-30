@@ -2,7 +2,7 @@
 title: "Welcome to my site!"
 layout: splash
 permalink: /about/
-excerpt: "Learn Unknown is a tentative website for learning and sharing DSML."
+excerpt: "Learn Unknown is created for learning and sharing knowledge and skills used in applied economics and data science projects."
 header:
   overlay_color: "#000"
   overlay_filter: "0.3"
@@ -12,7 +12,7 @@ read_time: false
 ---
 
 
-Learn Unknown is a tentative website for learning and sharing fundamentals, algorithms, and applications to data science and machine learning projects.
+Learn Unknown is created for learning and sharing fundamentals, algorithms, and applications to data science and machine learning projects.
 
 Wait to see...
 
