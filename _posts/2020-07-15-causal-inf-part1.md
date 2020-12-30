@@ -15,7 +15,7 @@ This is a series of study notes of [**Causal Inference: What If**](https://www.h
 
 To better use these notes, I would suggest that you read the book first. They shared many stories to make the technical points more interesting and relating. Alongside the book, you can use these notes to enhance your understanding of the topics. I hope you find them helpful.
 
-The first note talks about the assumptions for causal inference, the definition of causal effect, the difference between causal inference and associative inference, randomized experiments, observational studies, and three identification conditions for making causal inference in observational data. (It covers the chapters 1-3 in the book.)
+The first note talks about the assumptions for causal inference, definition of causal effect, difference between causal inference and associative inference, randomized experiments, observational studies, and three identification conditions for making causal inference in observational data. (It covers the chapters 1-3 in the book.)
 
 $$
 \newcommand{ind}[2]{ #1 \perp\!\!\!\perp #2}
