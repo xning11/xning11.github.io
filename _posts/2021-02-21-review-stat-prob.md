@@ -42,15 +42,11 @@ Objective of statistics is to make **statistical inferences** about a population
 		- For bell-shaped data, approx. 95% of the measurements fall within 2 std. dev. of the mean; thus, 4 std. dev. nearly covers the range of the data. 
 		- A quick (and dirty) approx. for standard deviation is therefore $s=range/4$.
 
-<center>
-
 | Parameter	| Statistic | 
 | -- | -- |
 | $\mu = 1/N \sum_i \mu_i$ <br> (true population mean) | $\bar{y} = 1/N \sum_i y_i$ <br> (sample mean, estimates of $\mu$) | 
 | $\sigma^2 = 1/N \sum_i (\mu_i - \mu)^2$ <br> (true population variance) | $s^2 = 1/(N-1) \sum_i (y_i - \bar{y})^2$ <br> (sample variance, estimates of $\sigma^2$) | 
 | $\pi = P(y=1)$ <br> (true population proportion) | $\hat{\pi} = y/n$ <br> (sample proportion, estimates of $\pi$) | 
-
-</center>
 
 
 A **random variable** is a numerical measure for outcomes of an event that are not known with certainty beforehand. 
@@ -64,6 +60,7 @@ A sample of $n$ measurements selected from a population is said to be a **random
 **Standard error** is the standard deviation of a statistic, which measures amount of the expected variability in statistic from sample to sample with fixed $n$. 
 
 **Confidence intervals** are range of one margin of error above/below the point estimate. 
+
 $$\text{Conf. interval} = \theta \pm MOE = \theta \pm [c.v. * s.e.]$$
 	
 A **probability distribution** describes the random behavior of the random variable by specifying all the possible values for the random variable along with the probability of that value occurring. 
@@ -222,9 +219,11 @@ A **p-value** is the probability under the null hypothesis of obtaining a point 
 ### Two-sample $t$ tests for $\mu$
 
 Two samples of sizes $n_1$ and $n_2$, independently drawn from separate populations with means $\mu_1$ and $\mu_2$ and variances $\sigma_1^2$ and $\sigma_2^2$.
+
 $$H_0: \mu_1 = \mu_2,   \quad   H_a: \mu_1 \neq \mu_2$$  
 
 The sampling distribution of the difference between sample means 
+
 $$
 \begin{aligned}
 \bar{y}_1 - \bar{y}_2 &\sim N(\mu_1 - \mu_2, \sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}) \\ 
@@ -232,27 +231,36 @@ Z &= \frac{(\bar{y}_1 - \bar{y}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_
 \end{aligned}
 $$
 
-In practice, $\sigma_1$ and $\sigma_2$ are likely unknown, replace by $s_1$ and $s_2$
-  - Rule of thumb: consider the variances different if the ratio of larger to smaller variance is more than four, i.e., 
-$$\frac{s_{max}^2}{s_{min}^2} > 4, \quad \text{or} \frac{s_{max}}{s_{min}}>2$$
+In practice, $\sigma_1$ and $\sigma_2$ are likely unknown, replace by $s_1$ and $s_2$.
+  - Rule of thumb: consider the variances different if the ratio of larger to smaller variance is more than four, i.e., $\frac{s_{max}^2}{s_{min}^2} > 4, \quad \text{or} \frac{s_{max}}{s_{min}}>2$
 
 If we can assume $\sigma=\sigma_1=\sigma_2$, then
+
 $$\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}} = \sigma \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} $$
+
 Estimate this common $\sigma$ by pooling the data 
+
 $$s_p = \sqrt{\frac{(n_1 - 1)s_1^2+(n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$$
+
 The pooled $t$-test statistic is 
+
 $$t = \frac{\bar{y}_1 - \bar{y}_2}{s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} $$
 
 For independent random samples drawn from normal populations, when $\sigma_1$ and $\sigma_2$ are unknown but $\sigma_1 \approx \sigma_2$, a $100(1−\alpha)\%$ conf. interval for $\mu_1−\mu_2$ is 
+
 $$\bar{y}_1 - \bar{y}_2 \pm t_{[n_1+n_2−2,\alpha/2]} \cdot \left(s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\right)$$
 
 If $\sigma_1$  and $\sigma_2$ are completely unknown, then  
+
 $$s_{\bar{y}_1 - \bar{y}_2} = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$$
+
 The statistic is NOT a $t$ random variable, NOR a standard normal random variable. It has a modified $t$ distribution (Welch's $t$-test) with modified degrees of freedom (truncated to the nearest integer) 
+
 $$df_s =  \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\left(\frac{s_1^2}{n_1}\right)^2 /(n_1 -1) + \left(\frac{s_2^2}{n_2}\right)^2 /(n_2 -1)}, \quad  df_s \leq n_1+n_2−2$$
 
 For independent random samples drawn from normal populations, when $\sigma_1$ and $\sigma_2$ are unknown, a $100(1−\alpha)\%$ conf. interval for $\mu_1−\mu_2$ is 
-$$\bar{y}_1 - \bar{y}_2 \pm t_{[df_s, \alpha/2]} \cdot \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$$
+
+$$\bar{y}_1 - \bar{y}_2 \pm t_{[df_s, \alpha/2]} \cdot \left(\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\right)$$
 
 Pooled $t$ test is more powerful (i.e., more likely to reject a wrong $H_0$) when $\sigma_1=\sigma_2$ is true. 
 Welch's $t$ test is more reliable when  $\sigma_1 \neq \sigma_2$, but more conservative. 
@@ -261,16 +269,20 @@ Welch's $t$ test is more reliable when  $\sigma_1 \neq \sigma_2$, but more conse
 ### Two-sample $z$ test for $\pi$
 
 Two samples of sizes $n_1$ and $n_2$, independently drawn from separate populations with proportions $\pi_1$  and $\pi_2$.
+
 $$H_0: \pi_1 = \pi_2,  \quad  H_a: \pi_1 \neq \pi_2 $$
 
 The sampling distribution of proportion difference  
+
 $$
 \begin{aligned}
 \hat{\pi}_1 − \hat{\pi}_2 &\sim N(\pi_1−\pi_2,\sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}} \\ 
 Z &= \frac{\hat{\pi}_1 - \hat{\pi}_2}{\sqrt{\frac{\pi_1 (1-\pi_1)}{n_1}+ \frac{\pi_2 (1-\pi_2)}{n_2}}} \sim N(0,1)    
 \end{aligned}
 $$
+
 For independent random samples drawn from binary populations, $n_1 \pi_1\geq 5$, $n_1 (1−\pi_1)\geq 5$, $n_2 \pi_2\geq 5$, $n_2 (1−\pi_2)\geq 5$, a $100(1−\alpha)\%$ conf. interval for $\pi_1−\pi_2$ is 
+
 $$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1}+ \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}} \right)$$
 
 
@@ -280,16 +292,84 @@ Each sample has the same number of observations $n=n_1=n_2$, observations are na
 
 Only interested in the difference $d_i=y_{1i}−y_{2i}$ between each pair.
 Sample mean for differences 
+
 $$\bar{d} = \frac{1}{n} \sum_i d_i = \bar{y}_1 - \bar{y}_2 $$
+
 Sample standard deviation for differences 
+
 $$s_D = \sqrt{\frac{\sum_i (d_i - \bar{d})^2}{n-1}}$$
+
 The paired $t$ test statistic is 
+
 $$t = \frac{\bar{y}_1 - \bar{y}_2}{s_D/\sqrt{n}}$$
 
 For independent random samples drawn from normal populations, when the data naturally pair, a $100(1−\alpha)\%$ conf. interval for $\mu_1−\mu_2$ is 
+
 $$\bar{y}_1 - \bar{y}_2 \pm t_{[n−1, \alpha/2]} \cdot \left(\frac{s_D}{\sqrt{n}} \right)$$
 		
 
 ### Analysis of Variance (ANOVA) 
 
+ANOVA (analysis of variance) is used to test if the response mean is independent of the group or if there is some association present. 
+
+**One-way ANOVA**
+
+Let there be $T$ groups where each group has $n_t$ number of samples selected from population $t$, each with population mean $\mu_1, \mu_2, ...,\mu_T$. Then a question of interest is whether or not all the means are equal. 
+
+$$H_0: \mu_1 = \mu_2 = ... = \mu_T,  \quad  H_a: \text{At least one mean differs} $$
+
+
+There are two types of variability:
+- Variability between group means $(\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t)$ around the overall mean $(\bar{y}.. = \sum_t^T \sum_i^{n_t} y_{it}/N_{T})$
+- Variability within each group $(y_{it})$ around the group mean $(\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t)$
+
+As a result, the larger the group to group variability, i.e., the further $\bar{y}_{.t}$ falls from $\bar{y}..$, the more likely there are differences in the true means. 
+
+The larger the variability within groups, i.e., the more the individual $y_{it}$ vary around $\bar{y}_{.t}$, the harder it is to determine if any difference we see is really significant. 
+
+The **between-sample variability** is measured by the sum of squared deviations between samples:
+
+$$SSB = \sum_t^T n_t (\bar{y}_{.t} - \bar{y}..)^2$$
+
+- If $H_0$ is true, we expect $\bar{y}_{.1}  \approx ... \approx \bar{y}_{.t} \approx \bar{y}_{..}$ resulting in $SSB \approx 0$.
+- If $H_a$ is true, we expect $SSB > 0$. 
+
+*Mean square between samples* is defined as an estimate of sample-to-sample variability based on how different the means from each group are from the grand mean. 
+
+$$MSB = s_B^2 = \frac{SSB}{T-1}$$ 
+
+The **within-sample variability** is measured by the sum of squared errors: 
+
+$$SSE = \sum_t^T (n_t - 1) s_t^2 = \sum_t^T \sum_i^{n_t} (y_{it} - \bar{y}_{.t})^2$$
+
+*Mean square error* is defined as an estimate of average variability within each group. 
+
+$$MSE = s_E^2 = \frac{SSE}{N_T-T}$$ 
+
+Under $H_0$, both $s_B^2$ and $s_E^2$ are estimates for the random error $\sigma^2$. The only way $s_B^2$ and $s_E^2$ can be different (assuming equal variances for all sample groups) is if the samples really do have different means so that $s_B^2 > s_E^2$.
+
+**Assumptions under ANOVA**:
+- Independent groups, random sampling 
+- Common variance across all groups (homoskedasticity)
+- Population distribution for each group is approximately Normal. 
+
+We use $F$-test statistic to compare the between-sample variability with the within-sample variability, 
+
+$$F_{\text{obs}} = \frac{SSB/(T-1)}{SSE/(N_T - T)} = \frac{s_B^2}{s_E^2} = \frac{MSB}{MSE}$$
+
+which follows an $F$ distribution with $df_1 = T-1$ and $df_2 = N_T - T$, under $H_0$ and assuming homoskedasticity. $F$-score is also called "signal-to-noise" ratio. 
+
+Note that ANOVA test is a one-sided test as variances are non-negative. We reject $H_0$ if $F_{\text{obs}} > F_{[T-1, N_T - T, \alpha]}$ or if $p$-value $\leq \alpha$. 
+
+
+**Checking ANOVA Assumptions**
+
+When the samples are balanced or nearly balanced ANOVA is robust to homoskedasticity assumption, i.e., ANOVA works well even if there is a severe problem of heteroskedasticity. 
+
+- Rule of thumb: if $\frac{s_{max}}{s_{min}} \leq 2$ then it can be assumed that the variances of each group are approx. equal. 
+- Check the data using the residuals vs. predicted graph. 
+
+When the graphical methods show extreme skew in samples, it may violate normality assumption. 
+
+- Use normal quantile plot to check whether or not a dataset is approx. normally distributed. Departures from the line indicate departures from normality. 
 
