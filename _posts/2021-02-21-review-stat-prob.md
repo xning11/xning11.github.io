@@ -320,8 +320,8 @@ $$H_0: \mu_1 = \mu_2 = ... = \mu_T,  \quad  H_a: \text{At least one mean differs
 
 
 There are two types of variability:
-- Variability between group means $(\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t)$ around the overall mean $(\bar{y}.. = \sum_t^T \sum_i^{n_t} y_{it}/N_{T})$
-- Variability within each group $(y_{it})$ around the group mean $(\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t)$
+- Variability between group means ($\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t$) around the overall mean ($\bar{y}.. = \sum_t^T \sum_i^{n_t} y_{it}/N_T$)
+- Variability within each group ($y_{it}$) around the group mean ($\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t$)
 
 As a result, the larger the group to group variability, i.e., the further $\bar{y}_{.t}$ falls from $\bar{y}..$, the more likely there are differences in the true means. 
 
@@ -331,7 +331,7 @@ The **between-sample variability** is measured by the sum of squared deviations 
 
 $$SSB = \sum_t^T n_t (\bar{y}_{.t} - \bar{y}..)^2$$
 
-- If $H_0$ is true, we expect $\bar{y}_{.1}  \approx ... \approx \bar{y}_{.t} \approx \bar{y}_{..}$ resulting in $SSB \approx 0$.
+- If $H_0$ is true, we expect $\bar{y}_{.1} \approx ... \approx \bar{y}_{.t} \approx \bar{y}..$ resulting in $SSB \approx 0$.
 - If $H_a$ is true, we expect $SSB > 0$. 
 
 *Mean square between samples* is defined as an estimate of sample-to-sample variability based on how different the means from each group are from the grand mean. 
@@ -373,3 +373,7 @@ When the graphical methods show extreme skew in samples, it may violate normalit
 
 - Use normal quantile plot to check whether or not a dataset is approx. normally distributed. Departures from the line indicate departures from normality. 
 
+
+**Two-way ANOVA**
+
+TBC...
