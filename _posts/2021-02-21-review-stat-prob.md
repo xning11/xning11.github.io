@@ -266,26 +266,6 @@ Pooled $t$ test is more powerful (i.e., more likely to reject a wrong $H_0$) whe
 Welch's $t$ test is more reliable when  $\sigma_1 \neq \sigma_2$, but more conservative. 
 
 
-### Two-sample $z$ test for $\pi$
-
-Two samples of sizes $n_1$ and $n_2$, independently drawn from separate populations with proportions $\pi_1$  and $\pi_2$.
-
-$$H_0: \pi_1 = \pi_2,  \quad  H_a: \pi_1 \neq \pi_2 $$
-
-The sampling distribution of proportion difference  
-
-$$
-\begin{aligned}
-\hat{\pi}_1 − \hat{\pi}_2 &\sim N(\pi_1−\pi_2,\sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}} \\ 
-Z &= \frac{\hat{\pi}_1 - \hat{\pi}_2}{\sqrt{\frac{\pi_1 (1-\pi_1)}{n_1}+ \frac{\pi_2 (1-\pi_2)}{n_2}}} \sim N(0,1)    
-\end{aligned}
-$$
-
-For independent random samples drawn from binary populations, $n_1 \pi_1\geq 5$, $n_1 (1−\pi_1)\geq 5$, $n_2 \pi_2\geq 5$, $n_2 (1−\pi_2)\geq 5$, a $100(1−\alpha)\%$ conf. interval for $\pi_1−\pi_2$ is 
-
-$$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1}+ \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}} \right)$$
-
-
 ### Paired $t$ test for means
 
 Each sample has the same number of observations $n=n_1=n_2$, observations are naturally paired, thus, NOT independent. 
@@ -306,6 +286,26 @@ $$t = \frac{\bar{y}_1 - \bar{y}_2}{s_D/\sqrt{n}}$$
 For independent random samples drawn from normal populations, when the data naturally pair, a $100(1−\alpha)\%$ conf. interval for $\mu_1−\mu_2$ is 
 
 $$\bar{y}_1 - \bar{y}_2 \pm t_{[n−1, \alpha/2]} \cdot \left(\frac{s_D}{\sqrt{n}} \right)$$
+
+
+### Two-sample $z$ test for $\pi$
+
+Two samples of sizes $n_1$ and $n_2$, independently drawn from separate populations with proportions $\pi_1$  and $\pi_2$.
+
+$$H_0: \pi_1 = \pi_2,  \quad  H_a: \pi_1 \neq \pi_2 $$
+
+The sampling distribution of proportion difference  
+
+$$
+\begin{aligned}
+\hat{\pi}_1 − \hat{\pi}_2 &\sim N(\pi_1−\pi_2,\sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}} \\ 
+Z &= \frac{\hat{\pi}_1 - \hat{\pi}_2}{\sqrt{\frac{\pi_1 (1-\pi_1)}{n_1}+ \frac{\pi_2 (1-\pi_2)}{n_2}}} \sim N(0,1)    
+\end{aligned}
+$$
+
+For independent random samples drawn from binary populations, $n_1 \pi_1\geq 5$, $n_1 (1−\pi_1)\geq 5$, $n_2 \pi_2\geq 5$, $n_2 (1−\pi_2)\geq 5$, a $100(1−\alpha)\%$ conf. interval for $\pi_1−\pi_2$ is 
+
+$$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1}+ \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}} \right)$$
 		
 
 ### Analysis of Variance (ANOVA) 
@@ -320,7 +320,7 @@ $$H_0: \mu_1 = \mu_2 = ... = \mu_T,  \quad  H_a: \text{At least one mean differs
 
 
 There are two types of variability:
-- Variability between group means ($\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t$) around the overall mean ($\bar{y}.. = \sum_t^T \sum_i^{n_t} y_{it}/N_T$)
+- Variability between group means ($\bar y_{.t} = \sum_i^{n_t} y_{it}/n_t$) around the overall mean ($\bar y.. = \sum_t^T \sum_i^{n_t} y_{it}/N_T$)
 - Variability within each group ($y_{it}$) around the group mean ($\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t$)
 
 As a result, the larger the group to group variability, i.e., the further $\bar{y}_{.t}$ falls from $\bar{y}..$, the more likely there are differences in the true means. 
