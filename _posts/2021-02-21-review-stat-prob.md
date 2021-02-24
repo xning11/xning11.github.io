@@ -161,13 +161,13 @@ $$
 The **sampling distribution of proportion $\hat{\pi}$** is roughly Normal as long as $n$ is "large enough" ($n\pi\geq 5$ and $n(1−\pi)\geq 5$). 
 
 $$
-\hat{\pi} \mathrel{\dot\sim} N(\pi, \sqrt{\frac{n\pi(1-\pi)}{n}})
+\hat{\pi} \mathrel{\dot\sim} N(\pi, \sqrt{\frac{\pi(1-\pi)}{n}})
 $$
 
 - A $100(1−\alpha)\%$ Conf. Interval for $\pi$ (the population proportion) is given by 
 
 $$
-\hat{\pi} \pm z_{\alpha/2} \cdot (\sqrt{\frac{n\hat{\pi}(1-\hat{\pi})}{n}})
+\hat{\pi} \pm z_{\alpha/2} \cdot (\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}})
 $$
 
 - Minimum sample size $n$ needed to obtain a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$ for the proportion $\pi$ of the population, is derived as follows
@@ -216,7 +216,7 @@ A **p-value** is the probability under the null hypothesis of obtaining a point 
 - Paird $t$ test is used to measure individual level variation, i.e., test for whether the per-individual differences are large enough to reject the null hypothesis of zero differences. 
 
 
-### Two-sample $t$ tests for $\mu$
+### Two-sample $t$ tests for means 
 
 Two samples of sizes $n_1$ and $n_2$, independently drawn from separate populations with means $\mu_1$ and $\mu_2$ and variances $\sigma_1^2$ and $\sigma_2^2$.
 
@@ -256,17 +256,17 @@ $$s_{\bar{y}_1 - \bar{y}_2} = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$$
 
 The statistic is NOT a $t$ random variable, NOR a standard normal random variable. It has a modified $t$ distribution (Welch's $t$-test) with modified degrees of freedom (truncated to the nearest integer) 
 
-$$df_s =  \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\left(\frac{s_1^2}{n_1}\right)^2 /(n_1 -1) + \left(\frac{s_2^2}{n_2}\right)^2 /(n_2 -1)}, \quad  df_s \leq n_1+n_2−2$$
+$$df_S =  \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\left(\frac{s_1^2}{n_1}\right)^2 /(n_1 -1) + \left(\frac{s_2^2}{n_2}\right)^2 /(n_2 -1)}, \quad  df_S \leq n_1+n_2−2$$
 
 For independent random samples drawn from normal populations, when $\sigma_1$ and $\sigma_2$ are unknown, a $100(1−\alpha)\%$ conf. interval for $\mu_1−\mu_2$ is 
 
-$$\bar{y}_1 - \bar{y}_2 \pm t_{[df_s, \alpha/2]} \cdot \left(\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\right)$$
+$$\bar{y}_1 - \bar{y}_2 \pm t_{[df_S, \alpha/2]} \cdot \left(\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\right)$$
 
 Pooled $t$ test is more powerful (i.e., more likely to reject a wrong $H_0$) when $\sigma_1=\sigma_2$ is true. 
 Welch's $t$ test is more reliable when  $\sigma_1 \neq \sigma_2$, but more conservative. 
 
 
-### Paired $t$ test for means
+### Paired $t$ test for mean differences
 
 Each sample has the same number of observations $n=n_1=n_2$, observations are naturally paired, thus, NOT independent. 
 
@@ -288,7 +288,7 @@ For independent random samples drawn from normal populations, when the data natu
 $$\bar{y}_1 - \bar{y}_2 \pm t_{[n−1, \alpha/2]} \cdot \left(\frac{s_D}{\sqrt{n}} \right)$$
 
 
-### Two-sample $z$ test for $\pi$
+### Two-sample $z$ test for proportions 
 
 Two samples of sizes $n_1$ and $n_2$, independently drawn from separate populations with proportions $\pi_1$  and $\pi_2$.
 
@@ -298,7 +298,7 @@ The sampling distribution of proportion difference
 
 $$
 \begin{aligned}
-\hat{\pi}_1 − \hat{\pi}_2 &\sim N(\pi_1−\pi_2,\sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}} \\ 
+\hat{\pi}_1 − \hat{\pi}_2 &\sim N \left(\pi_1−\pi_2,\sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}\right) \\ 
 Z &= \frac{\hat{\pi}_1 - \hat{\pi}_2}{\sqrt{\frac{\pi_1 (1-\pi_1)}{n_1}+ \frac{\pi_2 (1-\pi_2)}{n_2}}} \sim N(0,1)    
 \end{aligned}
 $$
@@ -321,7 +321,7 @@ $$H_0: \mu_1 = \mu_2 = ... = \mu_T,  \quad  H_a: \text{At least one mean differs
 
 There are two types of variability:
 - Variability between group means ($\bar y_{.t} = \sum_i^{n_t} y_{it}/n_t$) around the overall mean ($\bar y.. = \sum_t^T \sum_i^{n_t} y_{it}/N_T$)
-- Variability within each group ($y_{it}$) around the group mean ($\bar{y}_{.t} = \sum_i^{n_t} y_{it}/n_t$)
+- Variability within each group ($y_{it}$) around the group mean ($\bar y_{.t} = \sum_i^{n_t} y_{it}/n_t$)
 
 As a result, the larger the group to group variability, i.e., the further $\bar{y}_{.t}$ falls from $\bar{y}..$, the more likely there are differences in the true means. 
 
@@ -331,7 +331,7 @@ The **between-sample variability** is measured by the sum of squared deviations 
 
 $$SSB = \sum_t^T n_t (\bar{y}_{.t} - \bar{y}..)^2$$
 
-- If $H_0$ is true, we expect $\bar{y}_{.1} \approx ... \approx \bar{y}_{.t} \approx \bar{y}..$ resulting in $SSB \approx 0$.
+- If $H_0$ is true, we expect $\bar y_{.1} \approx ... \approx \bar y_{.t} \approx \bar y..$ resulting in $SSB \approx 0$.
 - If $H_a$ is true, we expect $SSB > 0$. 
 
 *Mean square between samples* is defined as an estimate of sample-to-sample variability based on how different the means from each group are from the grand mean. 
