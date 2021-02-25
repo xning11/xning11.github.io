@@ -1,5 +1,5 @@
 ---
-title: "Review of Basic Statistics and Probability Theory"
+title: "Review of Statistics, Probability Theory, and Hypothesis Testing"
 categories:
   - statistics
 tags:
@@ -129,12 +129,13 @@ The **sampling distribution of mean $\bar{y}$** approaches the Normal distributi
 
 $$
 \begin{aligned}
-\bar{y} &\mathrel{\dot\sim} N(\mu,\sigma /\sqrt{n})    \\
+\bar{y} &\mathrel{\dot\sim} N \left(\mu, \frac{\sigma}{\sqrt{n}}\right)    \\
 z &= \frac{\bar{y}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)  
 \end{aligned}$$
 
 - If sample from a normal population, the sampling distribution of $\bar{y}$ is Normal regardless of the size of $n$.
-- $\sigma$ is a population parameter, usually unknown; empirically we replace $\sigma$ with $s$, use $t$-score instead of $z$-score. 
+
+$\sigma$ is a population parameter, usually unknown; empirically we replace $\sigma$ with $s$, use $t$-score instead of $z$-score. 
 
 $$
 t = \frac{\bar{y} - \mu}{s/\sqrt{n}} \mathrel{\dot\sim} t_{n−1}
@@ -142,41 +143,42 @@ $$
 
 - Student's $t$ distribution usually has fatter tails than Normal distribution. When sample size $n$ increases, they become more consistent. 
   
-- A $100(1−\alpha)\%$ Conf. Interval for $\mu$ (the population mean) is given by 
+A $100(1−\alpha)\%$ Conf. Interval for $\mu$ (the population mean) is given by 
 
 $$
-\bar{y} \pm t_{[n−1, \alpha/2]} \cdot (s/\sqrt{n})
+\bar{y} \pm t_{[n−1, \alpha/2]} \cdot \left( \frac{s}{\sqrt{n}}\right)
 $$
 
-- Minimum sample size $n$ needed to achieve a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$, is derived as follows
+Minimum sample size $n$ needed to achieve a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$, is derived as follows
 
 $$
 n \geq \frac{(z_{\alpha/2})^2 \sigma^2}{m^{2}} 
 $$
 
-- which requires a preliminary assessment of $\sigma$, a desired confidence level $\alpha$, and a required margin of error $m$.
-    - Here assumes $\sigma$ is known, empirical rule: $\sigma \approx range/4$
-	- When $\sigma$ is unknown, the $t$-distribution must be used. 
+which requires a preliminary assessment of $\sigma$, a desired confidence level $\alpha$, and a required margin of error $m$.
+- Here assumes $\sigma$ is known, empirical rule: $\sigma \approx range/4$
+- When $\sigma$ is unknown, the $t$-distribution must be used. 
+
 
 The **sampling distribution of proportion $\hat{\pi}$** is roughly Normal as long as $n$ is "large enough" ($n\pi\geq 5$ and $n(1−\pi)\geq 5$). 
 
 $$
-\hat{\pi} \mathrel{\dot\sim} N(\pi, \sqrt{\frac{\pi(1-\pi)}{n}})
+\hat{\pi} \mathrel{\dot\sim} N \left(\pi, \sqrt{\frac{\pi(1-\pi)}{n}}\right)
 $$
 
-- A $100(1−\alpha)\%$ Conf. Interval for $\pi$ (the population proportion) is given by 
+A $100(1−\alpha)\%$ Conf. Interval for $\pi$ (the population proportion) is given by 
 
 $$
-\hat{\pi} \pm z_{\alpha/2} \cdot (\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}})
+\hat{\pi} \pm z_{\alpha/2} \cdot \left(\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\right)
 $$
 
-- Minimum sample size $n$ needed to obtain a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$ for the proportion $\pi$ of the population, is derived as follows
+Minimum sample size $n$ needed to obtain a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$ for the proportion $\pi$ of the population, is derived as follows
 
 $$
 n \geq \frac{(z_{\alpha/2})^2 \pi (1-\pi)}{m^2}
 $$
 
-- which requires a preliminary assessment of $\pi$.
+which requires a preliminary assessment of $\pi$.
 
 
 ## Hypothesis Testing
@@ -226,7 +228,7 @@ The sampling distribution of the difference between sample means
 
 $$
 \begin{aligned}
-\bar{y}_1 - \bar{y}_2 &\sim N(\mu_1 - \mu_2, \sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}) \\ 
+\bar{y}_1 - \bar{y}_2 &\sim N \left(\mu_1 - \mu_2, \sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}\right) \\ 
 Z &= \frac{(\bar{y}_1 - \bar{y}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}} \sim N(0,1)    
 \end{aligned}
 $$
@@ -270,12 +272,15 @@ Welch's $t$ test is more reliable when  $\sigma_1 \neq \sigma_2$, but more conse
 
 Each sample has the same number of observations $n=n_1=n_2$, observations are naturally paired, thus, NOT independent. 
 
-Only interested in the difference $d_i=y_{1i}−y_{2i}$ between each pair.
-Sample mean for differences 
+Only interested in the difference $d_i=y_{1i}−y_{2i}$ between each pair. 
+
+$$H_0: d = \mu_{y1} - \mu_{y2} = 0,   \quad   H_a: d \neq 0$$  
+
+Sample mean for differences is
 
 $$\bar{d} = \frac{1}{n} \sum_i d_i = \bar{y}_1 - \bar{y}_2 $$
 
-Sample standard deviation for differences 
+Sample standard deviation for differences is
 
 $$s_D = \sqrt{\frac{\sum_i (d_i - \bar{d})^2}{n-1}}$$
 
@@ -310,7 +315,7 @@ $$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\frac{\hat{\pi}
 
 ### Analysis of Variance (ANOVA) 
 
-ANOVA (analysis of variance) is used to test if the response mean is independent of the group or if there is some association present. 
+ANOVA is used to test if the response mean is independent of the group or if there is some association present. 
 
 **One-way ANOVA**
 
@@ -320,18 +325,18 @@ $$H_0: \mu_1 = \mu_2 = ... = \mu_T,  \quad  H_a: \text{At least one mean differs
 
 
 There are two types of variability:
-- Variability between group means ($\bar y_{.t} = \sum_i^{n_t} y_{it}/n_t$) around the overall mean ($\bar y.. = \sum_t^T \sum_i^{n_t} y_{it}/N_T$)
-- Variability within each group ($y_{it}$) around the group mean ($\bar y_{.t} = \sum_i^{n_t} y_{it}/n_t$)
+- Variability between group means $(\bar y_{t}. = \sum_i^{n_t} y_{ti}/n_t)$ around the overall mean $(\bar y.. = \sum_t^T \sum_i^{n_t} y_{ti}/N_T)$
+- Variability within each group $(y_{ti})$ around the group mean $(\bar y_{t}. = \sum_i^{n_t} y_{ti}/n_t)$
 
-As a result, the larger the group to group variability, i.e., the further $\bar{y}_{.t}$ falls from $\bar{y}..$, the more likely there are differences in the true means. 
+As a result, the larger the group to group variability, i.e., the further $\bar{y}_{t}.$ falls from $\bar{y}..$, the more likely there are differences in the true means. 
 
-The larger the variability within groups, i.e., the more the individual $y_{it}$ vary around $\bar{y}_{.t}$, the harder it is to determine if any difference we see is really significant. 
+The larger the variability within groups, i.e., the more the individual $y_{ti}$ vary around $\bar{y}_{t}.$, the harder it is to determine if any difference we see is really significant. 
 
 The **between-sample variability** is measured by the sum of squared deviations between samples:
 
-$$SSB = \sum_t^T n_t (\bar{y}_{.t} - \bar{y}..)^2$$
+$$SSB = \sum_t^T n_t (\bar{y}_{t}. - \bar{y}..)^2$$
 
-- If $H_0$ is true, we expect $\bar y_{.1} \approx ... \approx \bar y_{.t} \approx \bar y..$ resulting in $SSB \approx 0$.
+- If $H_0$ is true, we expect $\bar y_{1}. \approx ... \approx \bar y_{t}. \approx \bar y..$ resulting in $SSB \approx 0$.
 - If $H_a$ is true, we expect $SSB > 0$. 
 
 *Mean square between samples* is defined as an estimate of sample-to-sample variability based on how different the means from each group are from the grand mean. 
@@ -340,13 +345,19 @@ $$MSB = s_B^2 = \frac{SSB}{T-1}$$
 
 The **within-sample variability** is measured by the sum of squared errors: 
 
-$$SSE = \sum_t^T (n_t - 1) s_t^2 = \sum_t^T \sum_i^{n_t} (y_{it} - \bar{y}_{.t})^2$$
+$$SSE = \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}_{t}.)^2 = \sum_t^T (n_t - 1) s_t^2 $$
 
 *Mean square error* is defined as an estimate of average variability within each group. 
 
 $$MSE = s_E^2 = \frac{SSE}{N_T-T}$$ 
 
 Under $H_0$, both $s_B^2$ and $s_E^2$ are estimates for the random error $\sigma^2$. The only way $s_B^2$ and $s_E^2$ can be different (assuming equal variances for all sample groups) is if the samples really do have different means so that $s_B^2 > s_E^2$.
+
+Note that the sample total variability $(SST)$ is the sum of between- and within- variance. 
+
+$$
+SST = \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}..)^2 = \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}_{t}. + \bar{y}_{t}. - \bar{y}..)^2 = SSB + SSE 
+$$
 
 **Assumptions under ANOVA**:
 - Independent groups, random sampling 
@@ -359,7 +370,7 @@ $$F_{\text{obs}} = \frac{SSB/(T-1)}{SSE/(N_T - T)} = \frac{s_B^2}{s_E^2} = \frac
 
 which follows an $F$ distribution with $df_1 = T-1$ and $df_2 = N_T - T$, under $H_0$ and assuming homoskedasticity. $F$-score is also called "signal-to-noise" ratio. 
 
-Note that ANOVA test is a one-sided test as variances are non-negative. We reject $H_0$ if $F_{\text{obs}} > F_{[T-1, N_T - T, \alpha]}$ or if $p$-value $\leq \alpha$. 
+We reject $H_0$ if $F_{\text{obs}} > F_{[T-1, N_T - T, \alpha]}$ or if $p$-value $\leq \alpha$. 
 
 
 **Checking ANOVA Assumptions**
