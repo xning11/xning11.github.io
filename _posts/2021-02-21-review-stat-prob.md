@@ -5,7 +5,11 @@ categories:
 tags:
   - statistics 
   - hypothesis testing
+toc: true
+toc_sticky: true
 ---
+
+## Priors 
 
 **Statistics** is a mathematical science pertaining to the collection, analysis, interpretation or explanation, and presentation of data. 
 
@@ -42,11 +46,13 @@ Objective of statistics is to make **statistical inferences** about a population
 		- For bell-shaped data, approx. 95% of the measurements fall within 2 std. dev. of the mean; thus, 4 std. dev. nearly covers the range of the data. 
 		- A quick (and dirty) approx. for standard deviation is therefore $s=range/4$.
 
+<!-- 
 | Parameter	| Statistic | 
 | -- | -- |
 | $\mu = 1/N \sum_i \mu_i$ <br> (true population mean) | $\bar{y} = 1/N \sum_i y_i$ <br> (sample mean, estimates of $\mu$) | 
 | $\sigma^2 = 1/N \sum_i (\mu_i - \mu)^2$ <br> (true population variance) | $s^2 = 1/(N-1) \sum_i (y_i - \bar{y})^2$ <br> (sample variance, estimates of $\sigma^2$) | 
-| $\pi = P(y=1)$ <br> (true population proportion) | $\hat{\pi} = y/n$ <br> (sample proportion, estimates of $\pi$) | 
+| $\pi = P(y=1)$ <br> (true population proportion) | $\hat{\pi} = y/n$ <br> (sample proportion, estimates of $\pi$) |  
+-->
 
 
 A **random variable** is a numerical measure for outcomes of an event that are not known with certainty beforehand. 
@@ -280,7 +286,7 @@ Sample mean for differences is
 
 $$\bar{d} = \frac{1}{n} \sum_i d_i = \bar{y}_1 - \bar{y}_2 $$
 
-Sample standard deviation for differences is
+Sample standard error for differences is
 
 $$s_D = \sqrt{\frac{\sum_i (d_i - \bar{d})^2}{n-1}}$$
 
@@ -313,19 +319,22 @@ For independent random samples drawn from binary populations, $n_1 \pi_1\geq 5$,
 $$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1}+ \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}} \right)$$
 		
 
-### Analysis of Variance (ANOVA) 
+## Analysis of Variance (ANOVA) 
 
-ANOVA is used to test if the response mean is independent of the group or if there is some association present. 
+One-way ANOVA is used to test if the response mean is independent of the treatment or if there is some association present. 
 
-**One-way ANOVA**
+Two-way ANOVA is used to test whether either of two factors, or their interaction, are associated with some continuous response.
 
-Let there be $T$ groups where each group has $n_t$ number of samples selected from population $t$, each with population mean $\mu_1, \mu_2, ...,\mu_T$. Then a question of interest is whether or not all the means are equal. 
+
+###**One-way ANOVA**
+
+Let there be $T$ groups where each group has $n_t$ number of samples selected from population $t$, each with population mean $\mu_1, \mu_2, ...,\mu_T$, the total number of samples is $N=\sum_t^T n_t$. Then a question of interest is whether or not all the means are equal. 
 
 $$H_0: \mu_1 = \mu_2 = ... = \mu_T,  \quad  H_a: \text{At least one mean differs} $$
 
 
 There are two types of variability:
-- Variability between group means $(\bar y_{t}. = \sum_i^{n_t} y_{ti}/n_t)$ around the overall mean $(\bar y.. = \sum_t^T \sum_i^{n_t} y_{ti}/N_T)$
+- Variability between group means $(\bar y_{t}. = \sum_i^{n_t} y_{ti}/n_t)$ around the overall mean $(\bar y.. = \sum_t^T \sum_i^{n_t} y_{ti}/N)$
 - Variability within each group $(y_{ti})$ around the group mean $(\bar y_{t}. = \sum_i^{n_t} y_{ti}/n_t)$
 
 As a result, the larger the group to group variability, i.e., the further $\bar{y}_{t}.$ falls from $\bar{y}..$, the more likely there are differences in the true means. 
@@ -334,7 +343,12 @@ The larger the variability within groups, i.e., the more the individual $y_{ti}$
 
 The **between-sample variability** is measured by the sum of squared deviations between samples:
 
-$$SSB = \sum_t^T n_t (\bar{y}_{t}. - \bar{y}..)^2$$
+$$
+\begin{aligned}
+  SSB &= \sum_t^T n_t (\bar{y}_{t}. - \bar{y}..)^2 \\
+      &= \sum_t^T n_t (\bar{y}_{t}.)^2 - N (\bar{y}..)^2 
+\end{aligned}
+$$
 
 - If $H_0$ is true, we expect $\bar y_{1}. \approx ... \approx \bar y_{t}. \approx \bar y..$ resulting in $SSB \approx 0$.
 - If $H_a$ is true, we expect $SSB > 0$. 
@@ -345,19 +359,29 @@ $$MSB = s_B^2 = \frac{SSB}{T-1}$$
 
 The **within-sample variability** is measured by the sum of squared errors: 
 
-$$SSE = \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}_{t}.)^2 = \sum_t^T (n_t - 1) s_t^2 $$
+$$
+\begin{aligned}
+  SSE &= \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}_{t}.)^2 \\
+      &= \sum_t^T \sum_i^{n_t} (y_{ti})^2 -  \sum_t^T n_t (\bar{y}_{t}.)^2 
+\end{aligned}
+$$
 
 *Mean square error* is defined as an estimate of average variability within each group. 
 
-$$MSE = s_E^2 = \frac{SSE}{N_T-T}$$ 
-
-Under $H_0$, both $s_B^2$ and $s_E^2$ are estimates for the random error $\sigma^2$. The only way $s_B^2$ and $s_E^2$ can be different (assuming equal variances for all sample groups) is if the samples really do have different means so that $s_B^2 > s_E^2$.
+$$MSE = s_E^2 = \frac{SSE}{N-T}$$ 
 
 Note that the sample total variability $(SST)$ is the sum of between- and within- variance. 
 
 $$
-SST = \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}..)^2 = \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}_{t}. + \bar{y}_{t}. - \bar{y}..)^2 = SSB + SSE 
+\begin{aligned}
+  SST &= \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}..)^2 \\
+      &= \sum_t^T \sum_i^{n_t} (y_{ti} - \bar{y}_{t}. + \bar{y}_{t}. - \bar{y}..)^2 \\
+      &= \sum_t^T \sum_i^{n_t} (y_{ti})^2 - N (\bar{y}..)^2 \\
+      &= SSB + SSE 
+\end{aligned}
 $$
+
+Under $H_0$ and assuming equal variances for all sample groups, both $s_B^2$ and $s_E^2$ are unbiased estimates for the random error $\sigma^2$. When $H_0$ is not true, $s_E^2$ is still an unbiased estimates of $\sigma^2$ but $s_B^2$ is a biased, inflated estimate of $\sigma^2$. So if the samples really do have different means we would observe $s_B^2 > s_E^2$.
 
 **Assumptions under ANOVA**:
 - Independent groups, random sampling 
@@ -366,11 +390,11 @@ $$
 
 We use $F$-test statistic to compare the between-sample variability with the within-sample variability, 
 
-$$F_{\text{obs}} = \frac{SSB/(T-1)}{SSE/(N_T - T)} = \frac{s_B^2}{s_E^2} = \frac{MSB}{MSE}$$
+$$F_{\text{obs}} = \frac{SSB/(T-1)}{SSE/(N - T)} = \frac{s_B^2}{s_E^2} = \frac{MSB}{MSE}$$
 
-which follows an $F$ distribution with $df_1 = T-1$ and $df_2 = N_T - T$, under $H_0$ and assuming homoskedasticity. $F$-score is also called "signal-to-noise" ratio. 
+which follows an $F$ distribution with $df_1 = T-1$ and $df_2 = N-T$, under $H_0$ and assuming homoskedasticity. $F$-score is also called "signal-to-noise" ratio. 
 
-We reject $H_0$ if $F_{\text{obs}} > F_{[T-1, N_T - T, \alpha]}$ or if $p$-value $\leq \alpha$. 
+We reject $H_0$ if $F_{\text{obs}} > F_{[T-1, N-T, \alpha]}$ or if $p$-value $\leq \alpha$. 
 
 
 **Checking ANOVA Assumptions**
@@ -385,6 +409,94 @@ When the graphical methods show extreme skew in samples, it may violate normalit
 - Use normal quantile plot to check whether or not a dataset is approx. normally distributed. Departures from the line indicate departures from normality. 
 
 
-**Two-way ANOVA**
+###**Post-ANOVA Analysis**
 
-TBC...
+If we have rejected $H_0$ and claim that at least one group mean differs from others, what comes next? We need to explore the actual differences and detect in which group(s) they exist. Contrasts and Multiple Comparisons are often used as a post-ANOVA analysis, though they can be done without doing an ANOVA first.  
+
+A **contrast** represents a linear combination of comparisons among group or population means that you are interested in. 
+
+$$H_0: l = 0 \quad  H_a: l\neq 0$$
+
+Generic contrast forluma is written as: 
+
+$$
+l = \sum_t a_t \mu_t \quad \text{where} \sum_t a_t = 0 
+$$
+
+Estimated contrast formula is obtained by replacing the group means with their point estimates:
+
+$$
+\hat{l} = \sum_t a_t \bar{y}_t. \quad \text{where} \sum_t a_t = 0 
+$$
+
+Under the ANOVA assumptions, $\hat{l}$ is a linear combination of group means, independent normal random variables, so $\hat{l}$ must also be normal. 
+
+The estimated standard error for $\hat{l}$ is 
+
+$$
+s_{\hat{l}} = \sqrt{\sum_t a_t^2 s_{\bar{y}_t.}}  = \sqrt{\sum_t a_t^2 \frac{MSE}{n_t}} 
+$$
+
+The standardized $\hat{l}$ is distributed as a $t$-distribution with $N-T$ degrees of freedom:
+
+$$
+\frac{\hat{l} - l}{\sqrt{MSE \sum_t \frac{a_t^2}{n_t}}} \mathrel{\dot\sim} t_{[N-T,\alpha/2]} 
+$$
+
+where 
+
+$$
+MSE = s_E^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2 + \cdots + (n_T -1)s_T^2}{N-T}
+$$
+
+Under the null hypothesis, a $100(1−\alpha)\%$ conf. interval for contrast is 
+
+$$
+\hat{l} \pm t_{[N-T,\alpha/2]} \cdot \left( \sqrt{MSE} \sqrt{\sum_t \frac{a_t^2}{n_t}} \right)
+$$
+
+
+**Multiple Comparisons** methods are used to preserve the statistical validity of inferences when more than one inference is to be made on the same dataset. 
+
+When conducting multiple comparisons, we first need to set the experiment-wise type I error ($\alpha_E$) to control for overall error rate for all tests, then determine the individual-comparison-wise type I error ($\alpha_I$) to control for error rate for each single test. In other words, we need to control for the type I error for the whole experiment (of multiple tests) rather than for each individual test. 
+
+To see this, say we conduct 20 simultaneous tests, what is the probability of at least observing one significant result (under the null hypothesis that none of the tests are significant)? 
+
+$$
+\begin{aligned}
+  P(\text{making an error in one test}) &= \alpha_I \\ 
+  P(\text{not making an error in one test}) &= 1 - \alpha_I \\ 
+  P(\text{not making any error in $m$ tests}) &= (1 - \alpha_I)^m \\ 
+  P(\text{making at least an error in $m$ tests}) &= \alpha_E = 1 - (1 - \alpha_I)^m 
+\end{aligned}
+$$
+
+We have a $[1 - (1 - 0.05)^{20}] \approx 64\%$ change of observing at least one significant result for a set of 20 tests, even if all of the tests are actually not significant (under the null). 
+
+There are a few methods to correct for multiple testing. The **Bonferroni correction** sets the experiment-wise significance level at $\alpha_E = \alpha_I /m$. In this case, the probability of observing at least one significant result is 
+
+$$
+\begin{aligned}
+  P(\text{at least one significant result}) &= 1 - P(\text{no significant results}) \\
+   &= 1 - (1 - \frac{\alpha_I}{m})^m \\ 
+   &= 1 - (1 - \frac{0.05}{20})^{20} \\
+   &\approx 0.0488 
+\end{aligned}
+$$
+
+The Bonferroni correction is a single-step method, it relies on the assumption that all tests are independent. Depending on the actual correlation structure of the tests, the Bonferroni correction can be very conservative, leading to a high false negative rate (the type II error). In other words, it fails to reject more often than expected when a difference actually exists in the means especially when there are a lot of groups. 
+
+
+<details>
+<summary><i> Click here for other correction methods used in multiple testing.</i></summary>
+
+A similar method, called **Holmes-Bonferroni correction**, is a sequential procedure. After all tests have been performed, we sort all unadjusted $p$-values with the most extreme one (the lowest type I error rate) being the first, $p_1 \leq p_2 \leq ... \leq p_m$. Starting from $i=1$, we compare $p_i$ and $\alpha/(m-i+1)$, reject the null hypothesis $H_i$ if and only if $p_i \leq \alpha/(m-i+1)$. The Holmes method is less conservative than the Bonferroni method and thus has more statistical power. 
+
+Another approach proposed by Benjamini and Hochberg is to control for the **false discovery rate (FDR)**, which is defined as the proportion of false positives among all significant results (where the null has been rejected). The idea is that for larger $m$ tests, we do not expect all of the null hypotheses to be true, and so we do not want to restrictively control false positives (the type I error). Instead, we want to control the expected rate of false positive discoveries assuming we make at least one discovery. 
+
+To control FDR at level $\delta$, we sort the unadjusted $p$-values with the smallest being the first, we compare and reject the null hypothesis $H_j$ if and only if $p_j \leq \delta \cdot j/m$. 
+
+Storey's Method is to estimate **positive FDR**, using Storey $q$-value, whih is a function of the $p$-value of an individual test and the distribution of the $p$-values for all the tests performed. It reflects the proportion of test results (discoveries) that are likely to be false positives (false discoveries) for a given $p$-value in a given set of tests. 
+
+</details>
+
