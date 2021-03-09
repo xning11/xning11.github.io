@@ -3,8 +3,8 @@ title: "Review of Statistics, Probability Theory, and Hypothesis Testing"
 categories:
   - statistics
 tags:
-  - statistics 
   - hypothesis testing
+  - statistical inference 
 toc: true
 toc_sticky: true
 ---
@@ -326,7 +326,7 @@ One-way ANOVA is used to test if the response mean is independent of the treatme
 Two-way ANOVA is used to test whether either of two factors, or their interaction, are associated with some continuous response.
 
 
-###**One-way ANOVA**
+### One-way ANOVA
 
 Let there be $T$ groups where each group has $n_t$ number of samples selected from population $t$, each with population mean $\mu_1, \mu_2, ...,\mu_T$, the total number of samples is $N=\sum_t^T n_t$. Then a question of interest is whether or not all the means are equal. 
 
@@ -409,7 +409,7 @@ When the graphical methods show extreme skew in samples, it may violate normalit
 - Use normal quantile plot to check whether or not a dataset is approx. normally distributed. Departures from the line indicate departures from normality. 
 
 
-###**Post-ANOVA Analysis**
+### Post-ANOVA Analysis
 
 If we have rejected $H_0$ and claim that at least one group mean differs from others, what comes next? We need to explore the actual differences and detect in which group(s) they exist. Contrasts and Multiple Comparisons are often used as a post-ANOVA analysis, though they can be done without doing an ANOVA first.  
 
@@ -490,13 +490,13 @@ The Bonferroni correction is a single-step method, it relies on the assumption t
 <details>
 <summary><i> Click here for other correction methods used in multiple testing.</i></summary>
 
-A similar method, called **Holmes-Bonferroni correction**, is a sequential procedure. After all tests have been performed, we sort all unadjusted $p$-values with the most extreme one (the lowest type I error rate) being the first, $p_1 \leq p_2 \leq ... \leq p_m$. Starting from $i=1$, we compare $p_i$ and $\alpha/(m-i+1)$, reject the null hypothesis $H_i$ if and only if $p_i \leq \alpha/(m-i+1)$. The Holmes method is less conservative than the Bonferroni method and thus has more statistical power. 
+A similar method, called <b>Holmes-Bonferroni correction</b>, is a sequential procedure. After all tests have been performed, we sort all unadjusted $p$-values with the most extreme one (the lowest type I error rate) being the first, $p_1 \leq p_2 \leq ... \leq p_m$. Starting from $i=1$, we compare $p_i$ and $\alpha/(m-i+1)$, reject the null hypothesis $H_i$ if and only if $p_i \leq \alpha/(m-i+1)$. The Holmes method is less conservative than the Bonferroni method and thus has more statistical power. <br>
 
-Another approach proposed by Benjamini and Hochberg is to control for the **false discovery rate (FDR)**, which is defined as the proportion of false positives among all significant results (where the null has been rejected). The idea is that for larger $m$ tests, we do not expect all of the null hypotheses to be true, and so we do not want to restrictively control false positives (the type I error). Instead, we want to control the expected rate of false positive discoveries assuming we make at least one discovery. 
+Another approach proposed by Benjamini and Hochberg is to control for the <b>false discovery rate (FDR)</b>, which is defined as the proportion of false positives among all significant results (where the null has been rejected). The idea is that for larger $m$ tests, we do not expect all of the null hypotheses to be true, and so we do not want to restrictively control false positives (the type I error). Instead, we want to control the expected rate of false positive discoveries assuming we make at least one discovery. <br>
 
-To control FDR at level $\delta$, we sort the unadjusted $p$-values with the smallest being the first, we compare and reject the null hypothesis $H_j$ if and only if $p_j \leq \delta \cdot j/m$. 
+To control FDR at level $\delta$, we sort the unadjusted $p$-values with the smallest being the first, we compare and reject the null hypothesis $H_j$ if and only if $p_j \leq \delta \cdot j/m$. <br>
 
-Storey's Method is to estimate **positive FDR**, using Storey $q$-value, whih is a function of the $p$-value of an individual test and the distribution of the $p$-values for all the tests performed. It reflects the proportion of test results (discoveries) that are likely to be false positives (false discoveries) for a given $p$-value in a given set of tests. 
+Storey's Method is to estimate <b>positive FDR</b>, using Storey $q$-value, whih is a function of the $p$-value of an individual test and the distribution of the $p$-values for all the tests performed. It reflects the proportion of test results (discoveries) that are likely to be false positives (false discoveries) for a given $p$-value in a given set of tests. 
 
 </details>
 
