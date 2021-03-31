@@ -65,7 +65,7 @@ A sample of $n$ measurements selected from a population is said to be a **random
 
 **Standard error** is the standard deviation of a statistic, which measures amount of the expected variability in statistic from sample to sample with fixed $n$. 
 
-**Confidence intervals** are range of one margin of error above/below the point estimate. 
+A **Confidence interval** is a range of one margin of error above/below the point estimate, which is determined by the desired significance level. 
 
 $$\text{Conf. interval} = \theta \pm MOE = \theta \pm [c.v. * s.e.]$$
 	
@@ -158,7 +158,7 @@ $$
 Minimum sample size $n$ needed to achieve a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$, is derived as follows
 
 $$
-n \geq \frac{(z_{\alpha/2})^2 \sigma^2}{m^{2}} 
+n \geq \frac{(z_{\alpha/2})^2 \sigma^2/n}{m^{2}} 
 $$
 
 which requires a preliminary assessment of $\sigma$, a desired confidence level $\alpha$, and a required margin of error $m$.
@@ -181,7 +181,7 @@ $$
 Minimum sample size $n$ needed to obtain a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$ for the proportion $\pi$ of the population, is derived as follows
 
 $$
-n \geq \frac{(z_{\alpha/2})^2 \pi (1-\pi)}{m^2}
+n \geq \frac{(z_{\alpha/2})^2 \pi (1-\pi)/n}{m^2}
 $$
 
 which requires a preliminary assessment of $\pi$.
@@ -204,7 +204,7 @@ $$\text{power} = 1−\beta$$
 - The power of a hypothesis test is the probability to detect a specified difference in the means when that difference exists. 
 - Power depends on $\mu_1 - \mu_0$, $\alpha$, $\sigma^2$ and $n$. 
 
-A **p-value** is the probability under the null hypothesis of obtaining a point estimate as "extreme" or more "extreme" than would be observed by chance along, where the definition of "extreme" is taken from the alternative hypothesis (i.e., observing your sample results or more extreme results) assuming the null hypothesis is true. 
+A **p-value** is the probability under the null hypothesis of obtaining a point estimate as "extreme" or more "extreme" than would be observed by chance alone, where the definition of "extreme" is taken from the alternative hypothesis (i.e., observing your sample results or more extreme results) assuming the null hypothesis is true. 
 - If $p$-value is small, either $H_0$ is true and we have observed a rare event, or $H_0$ is false. 
 
 **Rejection rule**: reject the null hypothesis $H_0$ if the $p$-value $\leq \alpha$.
@@ -314,9 +314,18 @@ Z &= \frac{\hat{\pi}_1 - \hat{\pi}_2}{\sqrt{\frac{\pi_1 (1-\pi_1)}{n_1}+ \frac{\
 \end{aligned}
 $$
 
+Estimate the $\hat{\pi}$ by pooling the data 
+
+$$
+\begin{aligned}
+  \hat{\pi}_p &= \frac{\hat{\pi}_1 n1 + \hat{\pi}_2 n2}{n1+n2}  \\
+  \hat{se}_p &= \sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n1} + \frac{1}{n2})}
+\end{aligned}
+$$
+
 For independent random samples drawn from binary populations, $n_1 \pi_1\geq 5$, $n_1 (1−\pi_1)\geq 5$, $n_2 \pi_2\geq 5$, $n_2 (1−\pi_2)\geq 5$, a $100(1−\alpha)\%$ conf. interval for $\pi_1−\pi_2$ is 
 
-$$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1}+ \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}} \right)$$
+$$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n1} + \frac{1}{n2})} \right)$$
 		
 
 ## Analysis of Variance (ANOVA) 
