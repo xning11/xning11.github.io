@@ -9,7 +9,6 @@ toc: true
 toc_sticky: true
 ---
 
-## Priors 
 
 **Statistics** is a mathematical science pertaining to the collection, analysis, interpretation or explanation, and presentation of data. 
 
@@ -67,7 +66,7 @@ A sample of $n$ measurements selected from a population is said to be a **random
 
 A **Confidence interval** is a range of one margin of error above/below the point estimate, which is determined by the desired significance level. 
 
-$$\text{Conf. interval} = \theta \pm MOE = \theta \pm [c.v. * s.e.]$$
+$$\text{Conf. interval} = \hat{\theta} \pm MOE = \hat{\theta} \pm [c.v. * s.e.]$$
 	
 A **probability distribution** describes the random behavior of the random variable by specifying all the possible values for the random variable along with the probability of that value occurring. 
 
@@ -314,18 +313,18 @@ Z &= \frac{\hat{\pi}_1 - \hat{\pi}_2}{\sqrt{\frac{\pi_1 (1-\pi_1)}{n_1}+ \frac{\
 \end{aligned}
 $$
 
-Estimate the $\hat{\pi}$ by pooling the data 
+Estimate $\hat{\pi}$ by pooling the data 
 
 $$
 \begin{aligned}
-  \hat{\pi}_p &= \frac{\hat{\pi}_1 n1 + \hat{\pi}_2 n2}{n1+n2}  \\
-  \hat{se}_p &= \sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n1} + \frac{1}{n2})}
+  \hat{\pi}_p &= \frac{\hat{\pi}_1 n_1 + \hat{\pi}_2 n2_}{n_1+n_2}  \\
+  \hat{se}_p &= \sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n_1} + \frac{1}{n_2})}
 \end{aligned}
 $$
 
 For independent random samples drawn from binary populations, $n_1 \pi_1\geq 5$, $n_1 (1−\pi_1)\geq 5$, $n_2 \pi_2\geq 5$, $n_2 (1−\pi_2)\geq 5$, a $100(1−\alpha)\%$ conf. interval for $\pi_1−\pi_2$ is 
 
-$$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n1} + \frac{1}{n2})} \right)$$
+$$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n_1} + \frac{1}{n_2})} \right)$$
 		
 
 ## Analysis of Variance (ANOVA) 

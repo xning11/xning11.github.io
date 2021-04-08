@@ -18,9 +18,9 @@ Company X connects learners and teachers via online classrooms. Users can share 
 
 Essentially, the client company needs a model to identify important features for predicting user referrals on their platform. I worked with the team to tackle this problem in the following manner:
 
-1. Queried across 10+ datasets using SQL and reviewed all relevant data at the user level.
+1. Queried across 20+ datasets using SQL and reviewed all relevant data at the user level.
 2. Extracted and engineered 30+ features that could be strong indicators for predicting user referrals.
-3. Built a supervised learning model with referral as the main response variable.
+3. Built a supervised classification model with referral as the main response variable.
 
 Below I elaborate on each of these steps in detail. 
 
