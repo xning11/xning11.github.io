@@ -317,7 +317,7 @@ Estimate $\hat{\pi}$ by pooling the data
 
 $$
 \begin{aligned}
-  \hat{\pi}_p &= \frac{\hat{\pi}_1 n_1 + \hat{\pi}_2 n2_}{n_1+n_2}  \\
+  \hat{\pi}_p &= \frac{\hat{\pi}_1 n_1 + \hat{\pi}_2 n_2}{n_1+n_2}  \\
   \hat{se}_p &= \sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n_1} + \frac{1}{n_2})}
 \end{aligned}
 $$
@@ -497,6 +497,7 @@ The Bonferroni correction is a single-step method, it relies on the assumption t
 
 <details>
 <summary><i> Click here for other correction methods used in multiple testing.</i></summary>
+
 
 A similar method, called <b>Holmes-Bonferroni correction</b>, is a sequential procedure. After all tests have been performed, we sort all unadjusted $p$-values with the most extreme one (the lowest type I error rate) being the first, $p_1 \leq p_2 \leq ... \leq p_m$. Starting from $i=1$, we compare $p_i$ and $\alpha/(m-i+1)$, reject the null hypothesis $H_i$ if and only if $p_i \leq \alpha/(m-i+1)$. The Holmes method is less conservative than the Bonferroni method and thus has more statistical power. <br>
 
