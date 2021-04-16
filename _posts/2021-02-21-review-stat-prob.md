@@ -157,10 +157,10 @@ $$
 Minimum sample size $n$ needed to achieve a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$, is derived as follows
 
 $$
-n \geq \frac{(z_{\alpha/2})^2 \sigma^2/n}{m^{2}} 
+n = \frac{(z_{\alpha/2})^2 \sigma^2}{m^{2}} 
 $$
 
-which requires a preliminary assessment of $\sigma$, a desired confidence level $\alpha$, and a required margin of error $m$.
+which requires a preliminary assessment of $\sigma$, a desired confidence level $\alpha$, and a required margin of error $m$ (desired effect size).
 - Here assumes $\sigma$ is known, empirical rule: $\sigma \approx range/4$
 - When $\sigma$ is unknown, the $t$-distribution must be used. 
 
@@ -177,10 +177,10 @@ $$
 \hat{\pi} \pm z_{\alpha/2} \cdot \left(\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\right)
 $$
 
-Minimum sample size $n$ needed to obtain a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$ for the proportion $\pi$ of the population, is derived as follows
+Minimum sample size $n$ needed to obtain a $100(1−\alpha)\%$ Conf. Interval with margin of error $m$ (desired effect size) for the proportion $\pi$ of the population, is derived as follows
 
 $$
-n \geq \frac{(z_{\alpha/2})^2 \pi (1-\pi)/n}{m^2}
+n = \frac{(z_{\alpha/2})^2 \pi (1-\pi)}{m^2}
 $$
 
 which requires a preliminary assessment of $\pi$.
@@ -272,6 +272,14 @@ $$\bar{y}_1 - \bar{y}_2 \pm t_{[df_S, \alpha/2]} \cdot \left(\sqrt{\frac{s_1^2}{
 Pooled $t$ test is more powerful (i.e., more likely to reject a wrong $H_0$) when $\sigma_1=\sigma_2$ is true. 
 Welch's $t$ test is more reliable when  $\sigma_1 \neq \sigma_2$, but more conservative. 
 
+Minimum sample size $n_i$ for each group (assume equal sized groups) needed to obtain a $\alpha$ significance level, a $1-\beta$ statistical power with a desired effect size $d$ for difference in means in two independent samples, is derived as follows
+
+$$
+n_i = \frac{2(z_{\alpha/2} + z_{\beta})^2 \sigma^2}{d^2}
+$$
+
+where $\sigma$ is estimated by $s_p$ when assume conmmon variance in two samples.
+
 
 ### Paired $t$ test for mean differences
 
@@ -296,6 +304,14 @@ $$t = \frac{\bar{y}_1 - \bar{y}_2}{s_D/\sqrt{n}}$$
 For independent random samples drawn from normal populations, when the data naturally pair, a $100(1−\alpha)\%$ conf. interval for $\mu_1−\mu_2$ is 
 
 $$\bar{y}_1 - \bar{y}_2 \pm t_{[n−1, \alpha/2]} \cdot \left(\frac{s_D}{\sqrt{n}} \right)$$
+
+Minimum sample size $n$ needed to obtain a $\alpha$ significance level, a $1-\beta$ statistical power with a desired effect size $d$ for difference in means in paired samples, is derived as follows
+
+$$
+n = \frac{(z_{\alpha/2} + z_{\beta})^2 \sigma^2}{d^2}
+$$
+
+where $\sigma$ is estimated by $s_D$.
 
 
 ### Two-sample $z$ test for proportions 
@@ -325,7 +341,15 @@ $$
 For independent random samples drawn from binary populations, $n_1 \pi_1\geq 5$, $n_1 (1−\pi_1)\geq 5$, $n_2 \pi_2\geq 5$, $n_2 (1−\pi_2)\geq 5$, a $100(1−\alpha)\%$ conf. interval for $\pi_1−\pi_2$ is 
 
 $$\hat{\pi}_1 - \hat{\pi}_2 \pm Z_{[\alpha/2]} \cdot \left(\sqrt{\hat{\pi}_p (1-\hat{\pi}_p) (\frac{1}{n_1} + \frac{1}{n_2})} \right)$$
-		
+
+Minimum sample size $n_i$ for each group (assume equal sized groups) needed to obtain a $\alpha$ significance level, a $1-\beta$ statistical power with a desired effect size $d$ for difference in proportions in two independent samples, is derived as follows
+
+$$
+n_i = \frac{2(z_{\alpha/2} + z_{\beta})^2 \pi_p (1-\pi_p)}{d^2}
+$$
+
+where $\pi_p$ is estimated by $\hat{\pi}_p$ when assume conmmon variance in two samples.
+
 
 ## Analysis of Variance (ANOVA) 
 
