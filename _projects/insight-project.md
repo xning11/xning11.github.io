@@ -26,7 +26,12 @@ Below I elaborate on each of these steps in detail.
 
 ## Data Overview
 
-(*Due to the protection of privacy, I will not present the details of client's data, i.e., providing data visualization, feature exploration, and estimated results. Instead, I will focus on the ideation and the approach to solve the data and model problems of this project.*)
+(*Due to the protection of privacy, I will not present the details of client's data. Instead, I will focus on the ideation and the approach to solve the data and model problems of this project.*)
+
+<!-- <img src="{{ site.url }}{{ site.baseurl }}/images/feature-pairplot2.png" alt="" class="full"> -->
+
+![image-center]({{ site.url }}{{ site.baseurl }}/images/feature-pairplot2.png){: .align-center}
+
 
 As a startup company, Company X launched its referral program to expand user coverage. After users (i.e. parents) register online, they can enroll their children in courses that are conducted via live chat. A referral can happen at any stage, either before class enrollment, during class meetings, or after course completion. Once a referral is sent out by an existing user, the referred user gets a certain amount of credit upon signup to use towards their first class. When the referred user takes the class, the person who referred them will get also get a certain amount of credit. 
 
@@ -53,3 +58,4 @@ Based on my analysis, I offered my client a set of suggestions to boost their re
 ## Summary
 
 In this project, I used SQL to extract and engineer 30+ useful features across multiple tables using Mode Analytics. I built a supervised learning classification model to predict parent referrals and identify the influencing factors in the prediction using both the RFECV logistic regression and the random forest model. I then presented these findings to my client company and provided practical business insights for them to implement. It generated heated discussions about how they can upgrade their products and user experiences to improve quality user referrals and accelerate growth in the next quarter. I look forward to seeing their success. 
+
